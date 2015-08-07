@@ -1,0 +1,21 @@
+correlation.py
+
+	This script reads the data for each centre defined in the array for the span of 2 months and prints the cases when arrival correlation is > 0.5 / 0.6 and wholesale price correlation < 0. 
+
+	We have saved ouput of this script to file "corre".
+
+resultValidationPDF.py
+
+	This File reads "corre" and generates graphs for those cases.
+
+generatingSmoothedValues.py
+
+	This file was used to generate the smoothed_data table. But for each centre this was don manually.
+
+checkWPValidity.py
+
+	This script checks the correlation between the WPs of the mandis falling into the region of the same centre. Taking smoothed data into account.
+
+RealtiveDiffCorr.py
+
+	This script calculates the correlation of (Retail - wholesale) / wholesale across centres and different years over the period of specifies period.
