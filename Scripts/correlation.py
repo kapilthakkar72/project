@@ -92,11 +92,7 @@ def correlation(price1,price2):
     	if(max < corr[i]):
     		max = corr[i]
     		index = i;
-
-    # print "Correlation Min:" +str(min) + "  At Lag: " + str(lag[index])
-    # print "Correlation Min:" +str(max) + "  At Lag: " + str(lag[index2])
-    # print "Pearson Correlation:" + str(stats.pearsonr(price1,price2))
-
+    		
     return [max,float(lag[index])]
 
 def wholesale_correlation(price1,price2,lagi):
@@ -131,37 +127,17 @@ def wholesale_correlation(price1,price2,lagi):
 
     	r = sxy / denom
     	# print str(r)
-    	# print type(delay)
-    	# print type(lag[0])
+    	
     	if delay == round(lagi):
     		return r
-    	# corr.append(r)
-    	# lag.append(delay)
-
-    # min = 2
-    # index = -1
-    # for i in range(0,len(corr)):
-    # 	if(min > corr[i]):
-    # 		min = corr[i]
-    # 		index = i;
-
-    # max = -2
-    # index2 = -1
-    # for i in range(0,len(corr)):
-    # 	if(max < corr[i]):
-    # 		max = corr[i]
-    # 		index2 = i;
-
-    # print "Correlation Min:" +str(min) + "  At Lag: " + str(lag[index])
-    # print "Correlation Min:" +str(max) + "  At Lag: " + str(lag[index2])
-    # print "Pearson Correlation:" + str(stats.pearsonr(price1,price2))
-
+    	
     return -6
 
 
 if __name__ == "__main__":
+
+	centres = [44,16,3,27,5,7,10,11,15,23,28,31,32,37,40,41,44,50,54,56,62,68]
 	
-    centres = [44,16,3,27,5,7,10,11,15,23,28,31,32,37,40,41,44,50,54,56,62,68]
 	for centre in centres:
 	    StartDate = "01/07/07"
 	    EndDate = "05/31/15"
@@ -195,12 +171,12 @@ if __name__ == "__main__":
 		    # print "Arrival Correlation:"
 		    max_arrival_corr = correlation(arrival1,arrival2)
 
-            if(max_arrival_corr[0] < -4.0):
-                print "Denom Zero while calculating Arrival Correlation: Date:"+str(start_date) + " Centre:"+str(centre)
-                start_date = start_date + relativedelta(months = 2)
-                continue
+            	    if(max_arrival_corr[0] < -4.0):
+                	print "Denom Zero while calculating Arrival Correlation: Date:"+str(start_date) + " Centre:"+str(centre)
+                	start_date = start_date + relativedelta(months = 2)
+                	continue
 
-	    	if max_arrival_corr[0] > 0.5 :
+	    	    if max_arrival_corr[0] > 0.5 :
 			    wp1 = []
 			    wp2 = []
 
@@ -220,12 +196,11 @@ if __name__ == "__main__":
 			    lag = max_arrival_corr[1]
 			    max_wholesale_corr = wholesale_correlation(wp1,wp2,lag)
 
-             	if(max_wholesale_corr < -4.0):
-                    print "Denom Zero while calculating Wholesale Correlation: Date:"+str(start_date) + " Centre:"+str(centre)
-                    start_date = start_date + relativedelta(months = 2)
-                    continue
-
-
+             		    if(max_wholesale_corr < -4.0):
+                    		print "Denom Zero while calculating Wholesale Correlation: Date:"+str(start_date) + " Centre:"+str(centre)
+                    		start_date = start_date + relativedelta(months = 2)
+                    		continue
+					
 			    if(max_wholesale_corr < 0):
 			    	print "Yuppiiieee!!! FOUND ONE... : Centre:"+ str(centre) + " date: " + str(start_date) + " : "+ str(max_arrival_corr[0]) + " "+ str(max_wholesale_corr)
 

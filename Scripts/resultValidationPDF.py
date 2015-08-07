@@ -40,7 +40,7 @@ result[i][3] : wholesale_corr
 '''
 def readFile(filename):
 	result = []
-	for line in open('corre','r').readlines():
+	for line in open('corre_new','r').readlines():
 		index = line.find("Yuppiiieee!!! FOUND ONE... :")
 		if(index != -1):
 			centreIndex = line.find("Centre:")
@@ -85,7 +85,7 @@ def getData(centre,start_date):
 
 	query = "select dateofdata,wholesaleprice,arrivalsintons from smoothed_data where dateofdata>='" + str(start_date) +"' and dateofdata <= '" + str(end_date) +"' and centreid = " + str(centre) + " order by dateofdata;"
 
-	print query
+	# print query
 
 	conn_string = "host='localhost' dbname='onion' user='postgres' password='password'" 
 	conn = psycopg2.connect(conn_string) 
@@ -132,23 +132,14 @@ def correlation(arrival1,arrival2):
     	corr.append(r)
     	lag.append(delay)
 
-    min = 2
-    index = -1
-    for i in range(0,len(corr)):
-    	if(min > corr[i]):
-    		min = corr[i]
-    		index = i;
-
+    
     max = -2
-    index2 = -1
+    index = -1
     for i in range(0,len(corr)):
     	if(max < corr[i]):
     		max = corr[i]
-    		index2 = i;
+    		index = i;
 
-    # print "Correlation Min:" +str(min) + "  At Lag: " + str(lag[index])
-    # print "Correlation Min:" +str(max) + "  At Lag: " + str(lag[index2])
-    # print "Pearson Correlation:" + str(stats.pearsonr(arrival1,arrival2))
 
     return [max,float(lag[index])]
 
@@ -265,31 +256,33 @@ def createPDF(centre,date,arrival_corr,wholesale_corr):
 		# ax2.legend(['Wholesale This Year','Wholesale Last Year'])
 		
 		# plt.title(title)
-		# pdf.savefig()  # saves the current figure into a pdf page
+		pdf.savefig()  # saves the current figure into a pdf page
 		fig.set_size_inches(20,12)
-		plt.show()
-		# plt.close()
+		# plt.show()
+		plt.close()
 
 if __name__ == "__main__":
 	# Read the file
-	 # fileResult = readFile("corre")
+	fileResult = readFile("corre")
 
 	# Process Each result of the file
-	# for oneResult in fileResult:
-	# 	centre = oneResult[0]
-	# 	date = oneResult[1]
-	# 	arrival_corr = oneResult[2]
-	# 	wholesale_corr = oneResult[3]
+	i=1
+	for oneResult in fileResult:
+		print i
+		i=i+1
+		centre = oneResult[0]
+	 	date = oneResult[1]
+	 	arrival_corr = oneResult[2]
+	 	wholesale_corr = oneResult[3]
+	 	if(arrival_corr < 0.6 ):
+	 		continue;
 
-	# 	if(arrival_corr < 0.6 or centre != 16 ):
-	# 		continue;
+	 	createPDF(centre,date,arrival_corr,wholesale_corr)
 
-	# 	createPDF(centre,date,arrival_corr,wholesale_corr)
-
-	centre = 3
-	date = datetime.datetime.strptime("2011-11-07", "%Y-%m-%d")
-	arrival_corr = 0.698170666739
-	wholesale_corr = -0.230796186701
+	#centre = 3
+	#date = datetime.datetime.strptime("2011-11-07", "%Y-%m-%d")
+	#arrival_corr = 0.698170666739
+	#wholesale_corr = -0.230796186701
 
 	createPDF(centre,date,arrival_corr,wholesale_corr)
 
