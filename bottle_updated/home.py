@@ -284,102 +284,117 @@ def formCluster():
 def formCluster():
 	# Get data from the form
 	state = request.forms.get('state')
-	print "State: " + state
-	year = request.forms.get('year')
-	print "Year: " + year
-	month = request.forms.get('month')
 	center = request.forms.get('center')
 	variation = int(request.forms.get('variation'))
 	option = request.forms.get('opt')
 	wholesalePriceC = str(request.forms.get('wholesalePriceC'))
-	# print wholesalePriceC
 	retailPriceC = str(request.forms.get('retailPriceC'))
-	# print retailPriceC
 	absoluteDiffC = str(request.forms.get('absoluteDiffC'))
-	# print absoluteDiffC
 	relativeDiffC = str(request.forms.get('relativeDiffC'))
-	# print relativeDiffC
 	arrivalC = str(request.forms.get('arrivalC'))
-	# print arrivalC
 	retailDiff = str(request.forms.get('retailDiff'))
-	# print retailDiff
 	rmwAnalysis = str(request.forms.get('rmwAnalysis'))
-	# print rmwAnalysis
-
-
-	# This query fetches the wholesale data... queryRetail will do the work for retail data
+    	timeInput = str(request.forms.get('timeInput'))  #option1 or option2
+	year = request.forms.get('year')
+	month = request.forms.get('month')
 	
-	# Wholesale : Date, State, Mandi, Arrival, Modal Price
-
 	query = ""
 	queryRetail = ""
-	# Now we need to fetch data and form clusters
-	if(option == "statewise"):
-		if(state == "0"):
-			# All States
-			if(month == "0" and year != "0"):
-				# All Months
-				query = "select DateOfData, State, MandiName, ArrivalsInTons, ModalPriceRsQtl from wholesaleoniondata as w, STATES as s, mandis m where w.mandicode=m.mandicode and m.StateCode = s.StateCode and extract(year from dateofdata)=" + year + " order by dateofdata"
-				queryRetail = "select DateOfData,state,CentreName,Longitude,latitude,Price from RetailOnionData as r, states as s, centres as c where c.StateCode = s.StateCode and r.centreid = c.centreid and extract(year from DateOfData) =" + year + " order by DateOfData"
 
-			if(month == "0" and year == "0"):
-				# All Months
-				query = query = "select DateOfData, State, MandiName, ArrivalsInTons, ModalPriceRsQtl from wholesaleoniondata as w, STATES as s, mandis m where w.mandicode=m.mandicode and m.StateCode = s.StateCode order by dateofdata"
-				queryRetail = "select DateOfData,state,CentreName,Longitude,latitude,Price from RetailOnionData as r, states as s, centres as c where c.StateCode = s.StateCode and r.centreid = c.centreid order by DateOfData"
-			
-			if(month != "0" and year != "0"):
-				#Particular Month
-				query = "select DateOfData, State, MandiName, ArrivalsInTons, ModalPriceRsQtl from wholesaleoniondata as w, STATES as s, mandis m where w.mandicode=m.mandicode and m.StateCode = s.StateCode and extract(year from dateofdata)=" + year + " and extract(month from dateofdata)="+month+" order by dateofdata"
-				queryRetail = "select DateOfData,state,CentreName,Longitude,latitude,Price from RetailOnionData as r, states as s , centres as c where r.centreid = c.centreid and c.StateCode = s.StateCode and extract(year from DateOfData)=" + year + " and extract(month from dateofdata)="+month+" order by dateofdata"
+	if(timeInput == "option1"):
+                	
+                        # Wholesale : Date, State, Mandi, Arrival, Modal Price
+                        # Now we need to fetch data and form clusters
+                        if(option == "statewise"):
+                            if(state == "0"):
+                                # All States
+                                if(month == "0" and year != "0"):
+                                    # All Months
+                                    query = "select DateOfData, State, MandiName, ArrivalsInTons, ModalPriceRsQtl from wholesaleoniondata as w, STATES as s, mandis m where w.mandicode=m.mandicode and m.StateCode = s.StateCode and extract(year from dateofdata)=" + year + " order by dateofdata"
+                                    queryRetail = "select DateOfData,state,CentreName,Longitude,latitude,Price from RetailOnionData as r, states as s, centres as c where c.StateCode = s.StateCode and r.centreid = c.centreid and extract(year from DateOfData) =" + year + " order by DateOfData"
+                    
+                                if(month == "0" and year == "0"):
+                                    # All Months
+                                    query = query = "select DateOfData, State, MandiName, ArrivalsInTons, ModalPriceRsQtl from wholesaleoniondata as w, STATES as s, mandis m where w.mandicode=m.mandicode and m.StateCode = s.StateCode order by dateofdata"
+                                    queryRetail = "select DateOfData,state,CentreName,Longitude,latitude,Price from RetailOnionData as r, states as s, centres as c where c.StateCode = s.StateCode and r.centreid = c.centreid order by DateOfData"
+                                
+                                if(month != "0" and year != "0"):
+                                    #Particular Month
+                                    query = "select DateOfData, State, MandiName, ArrivalsInTons, ModalPriceRsQtl from wholesaleoniondata as w, STATES as s, mandis m where w.mandicode=m.mandicode and m.StateCode = s.StateCode and extract(year from dateofdata)=" + year + " and extract(month from dateofdata)="+month+" order by dateofdata"
+                                    queryRetail = "select DateOfData,state,CentreName,Longitude,latitude,Price from RetailOnionData as r, states as s , centres as c where r.centreid = c.centreid and c.StateCode = s.StateCode and extract(year from DateOfData)=" + year + " and extract(month from dateofdata)="+month+" order by dateofdata"
+                    
+                                if(month != "0" and year == "0"):
+                                    #Particular Month
+                                    query = "select DateOfData, State, MandiName, ArrivalsInTons, ModalPriceRsQtl from wholesaleoniondata as w, STATES as s, mandis m where w.mandicode=m.mandicode and m.StateCode = s.StateCode and extract(month from dateofdata)="+month+" order by dateofdata"
+                                    queryRetail = "select DateOfData,state,CentreName,Longitude,latitude,Price from RetailOnionData as r, states as s  , centres as c where r.centreid = c.centreid and c.StateCode = s.StateCode and extract(month from dateofdata)="+month+" order by dateofdata"
+                            else:
+                                # Particular state
+                                if(month == "0" and year != "0"):
+                                    # All Months
+                                    query = "select DateOfData, State, MandiName, ArrivalsInTons, ModalPriceRsQtl from wholesaleoniondata as w, STATES as s, mandis m where w.mandicode=m.mandicode and m.StateCode = s.StateCode and State='"+ state+"' and extract(year from dateofdata)=" + year + " order by dateofdata"
+                                    queryRetail = "select DateOfData,state,CentreName,Longitude,latitude,Price from RetailOnionData as r, STATES as s  , centres as c where r.centreid = c.centreid and c.StateCode = s.StateCode and extract(year from dateofdata)=" + year + " and state = '" + state + "' order by DateOfData"
+                    
+                                if(month == "0" and year == "0"):
+                                    # All Months
+                                    query = "select DateOfData, State, MandiName, ArrivalsInTons, ModalPriceRsQtl from wholesaleoniondata as w, STATES as s , mandis m where w.mandicode=m.mandicode and m.StateCode = s.StateCode and State='"+ state+"' order by dateofdata"
+                                    queryRetail = "select DateOfData,state,CentreName,Longitude,latitude,Price from RetailOnionData as r, STATES as s  , centres as c where r.centreid = c.centreid and c.StateCode = s.StateCode and state = '" + state + "' order by DateOfData"
+                    
+                                if(month != "0" and year != "0"):
+                                    #Particular Month
+                                    query = "select DateOfData, State, MandiName, ArrivalsInTons, ModalPriceRsQtl from wholesaleoniondata as w, STATES as s , mandis m where w.mandicode=m.mandicode and m.StateCode = s.StateCode and State='"+ state+"' and extract(year from dateofdata)=" + year + " and extract(month from dateofdata)="+month+" order by dateofdata"
+                                    queryRetail = "select DateOfData,state,CentreName,Longitude,latitude,Price from RetailOnionData as r, STATES as s  , centres as c where r.centreid = c.centreid and c.StateCode = s.StateCode and extract(year from dateofdata)=" + year + " and state = '" + state + "' and extract(month from DateOfData) = " + month + " order by DateOfData"
+                    
+                                if(month != "0" and year == "0"):
+                                    #Particular Month
+                                    query = "select DateOfData, State, MandiName, ArrivalsInTons, ModalPriceRsQtl from wholesaleoniondata as w, STATES as s , mandis m where w.mandicode=m.mandicode and m.StateCode = s.StateCode and State='"+ state+"' and extract(month from dateofdata)="+month+" order by dateofdata"
+                                    queryRetail = "select DateOfData,state,CentreName,Longitude,latitude,Price from RetailOnionData as r, STATES as s  , centres as c where r.centreid = c.centreid and c.StateCode = s.StateCode and state = '" + state + "' and extract(month from DateOfData) = " + month + " order by DateOfData"
+                        else: # option = "centerwise"
+                                # Particular center
+                            if(month == "0" and year != "0"):
+                                # All Months
+                                query = "select dateofdata,state, mandiname, ArrivalsInTons, ModalPriceRsQtl from wholesaleoniondata as w,mandis m, states as s,  centres c where m.centreid = c.centreid and c.centreName = '" + center + "' and w.mandicode = m.mandicode and s.StateCode = c.StateCode and extract(year from dateofdata)=" + year + " order by dateofdata";
+                                queryRetail = "select DateOfData,state,CentreName,Longitude,latitude,Price from RetailOnionData as r, states as s , centres as c  where r.centreid = c.centreid and s.StateCode = c.StateCode and extract(year from dateofdata)=" + year + " and CentreName = '" + center + "' order by DateOfData"
+                    
+                            if(month == "0" and year == "0"):
+                                # All Months
+                                query = "select dateofdata,state,mandiname, ArrivalsInTons, ModalPriceRsQtl from wholesaleoniondata as w,mandis m, states as s,  centres c where m.centreid = c.centreid and c.centreName = '" + center + "' and w.mandicode = m.mandicode and s.StateCode = c.StateCode order by dateofdata";
+                                queryRetail = "select DateOfData,state,CentreName,Longitude,latitude,Price from RetailOnionData as r, states as s , centres as c  where r.centreid = c.centreid and s.StateCode = c.StateCode and CentreName = '" + center + "' order by DateOfData"
+                    
+                            if(month != "0" and year != "0"):
+                                #Particular Month
+                                query = "select dateofdata,state,mandiname, ArrivalsInTons, ModalPriceRsQtl from wholesaleoniondata as w,mandis m, states as s,  centres c where m.centreid = c.centreid and c.centreName = '" + center + "' and w.mandicode = m.mandicode and s.StateCode = c.StateCode and extract(month from dateofdata)="+month+" and extract(year from dateofdata)=" + year + " order by dateofdata";
+                                
+                                queryRetail = "select DateOfData,state,CentreName,Longitude,latitude,Price from RetailOnionData as r, states as s , centres as c  where r.centreid = c.centreid and s.StateCode = c.StateCode and extract(year from dateofdata)=" + year + " and CentreName = '" + center + "' and extract(month from DateOfData) = " + month + " order by DateOfData"
+                    
+                            if(month != "0" and year == "0"):
+                                #Particular Month
+                                query = "select dateofdata,state,mandiname, ArrivalsInTons, ModalPriceRsQtl from wholesaleoniondata as w,mandis m, states as s,  centres c where m.centreid = c.centreid and c.centreName = '" + center + "' and w.mandicode = m.mandicode and s.StateCode = c.StateCode and extract(month from dateofdata)="+month+"  order by dateofdata";
+                                queryRetail = "select DateOfData,state,CentreName,Longitude,latitude,Price from RetailOnionData as r, states as s , centres as c  where r.centreid = c.centreid and s.StateCode = c.StateCode and CentreName = '" + center + "' and extract(month from DateOfData) = " + month + " order by DateOfData"
 
-			if(month != "0" and year == "0"):
-				#Particular Month
-				query = "select DateOfData, State, MandiName, ArrivalsInTons, ModalPriceRsQtl from wholesaleoniondata as w, STATES as s, mandis m where w.mandicode=m.mandicode and m.StateCode = s.StateCode and extract(month from dateofdata)="+month+" order by dateofdata"
-				queryRetail = "select DateOfData,state,CentreName,Longitude,latitude,Price from RetailOnionData as r, states as s  , centres as c where r.centreid = c.centreid and c.StateCode = s.StateCode and extract(month from dateofdata)="+month+" order by dateofdata"
-		else:
-			# Particular state
-			if(month == "0" and year != "0"):
-				# All Months
-				query = "select DateOfData, State, MandiName, ArrivalsInTons, ModalPriceRsQtl from wholesaleoniondata as w, STATES as s, mandis m where w.mandicode=m.mandicode and m.StateCode = s.StateCode and State='"+ state+"' and extract(year from dateofdata)=" + year + " order by dateofdata"
-				queryRetail = "select DateOfData,state,CentreName,Longitude,latitude,Price from RetailOnionData as r, STATES as s  , centres as c where r.centreid = c.centreid and c.StateCode = s.StateCode and extract(year from dateofdata)=" + year + " and state = '" + state + "' order by DateOfData"
-
-			if(month == "0" and year == "0"):
-				# All Months
-				query = "select DateOfData, State, MandiName, ArrivalsInTons, ModalPriceRsQtl from wholesaleoniondata as w, STATES as s , mandis m where w.mandicode=m.mandicode and m.StateCode = s.StateCode and State='"+ state+"' order by dateofdata"
-				queryRetail = "select DateOfData,state,CentreName,Longitude,latitude,Price from RetailOnionData as r, STATES as s  , centres as c where r.centreid = c.centreid and c.StateCode = s.StateCode and state = '" + state + "' order by DateOfData"
-
-			if(month != "0" and year != "0"):
-				#Particular Month
-				query = "select DateOfData, State, MandiName, ArrivalsInTons, ModalPriceRsQtl from wholesaleoniondata as w, STATES as s , mandis m where w.mandicode=m.mandicode and m.StateCode = s.StateCode and State='"+ state+"' and extract(year from dateofdata)=" + year + " and extract(month from dateofdata)="+month+" order by dateofdata"
-				queryRetail = "select DateOfData,state,CentreName,Longitude,latitude,Price from RetailOnionData as r, STATES as s  , centres as c where r.centreid = c.centreid and c.StateCode = s.StateCode and extract(year from dateofdata)=" + year + " and state = '" + state + "' and extract(month from DateOfData) = " + month + " order by DateOfData"
-
-			if(month != "0" and year == "0"):
-				#Particular Month
-				query = "select DateOfData, State, MandiName, ArrivalsInTons, ModalPriceRsQtl from wholesaleoniondata as w, STATES as s , mandis m where w.mandicode=m.mandicode and m.StateCode = s.StateCode and State='"+ state+"' and extract(month from dateofdata)="+month+" order by dateofdata"
-				queryRetail = "select DateOfData,state,CentreName,Longitude,latitude,Price from RetailOnionData as r, STATES as s  , centres as c where r.centreid = c.centreid and c.StateCode = s.StateCode and state = '" + state + "' and extract(month from DateOfData) = " + month + " order by DateOfData"
-	else: # option = "centerwise"
-			# Particular center
-		if(month == "0" and year != "0"):
-			# All Months
-			query = "select dateofdata,state, mandiname, ArrivalsInTons, ModalPriceRsQtl from wholesaleoniondata as w,mandis m, states as s,  centres c where m.centreid = c.centreid and c.centreName = '" + center + "' and w.mandicode = m.mandicode and s.StateCode = c.StateCode and extract(year from dateofdata)=" + year + " order by dateofdata";
-			queryRetail = "select DateOfData,state,CentreName,Longitude,latitude,Price from RetailOnionData as r, states as s , centres as c  where r.centreid = c.centreid and s.StateCode = c.StateCode and extract(year from dateofdata)=" + year + " and CentreName = '" + center + "' order by DateOfData"
-
-		if(month == "0" and year == "0"):
-			# All Months
-			query = "select dateofdata,state,mandiname, ArrivalsInTons, ModalPriceRsQtl from wholesaleoniondata as w,mandis m, states as s,  centres c where m.centreid = c.centreid and c.centreName = '" + center + "' and w.mandicode = m.mandicode and s.StateCode = c.StateCode order by dateofdata";
-			queryRetail = "select DateOfData,state,CentreName,Longitude,latitude,Price from RetailOnionData as r, states as s , centres as c  where r.centreid = c.centreid and s.StateCode = c.StateCode and CentreName = '" + center + "' order by DateOfData"
-
-		if(month != "0" and year != "0"):
-			#Particular Month
-			query = "select dateofdata,state,mandiname, ArrivalsInTons, ModalPriceRsQtl from wholesaleoniondata as w,mandis m, states as s,  centres c where m.centreid = c.centreid and c.centreName = '" + center + "' and w.mandicode = m.mandicode and s.StateCode = c.StateCode and extract(month from dateofdata)="+month+" and extract(year from dateofdata)=" + year + " order by dateofdata";
-			
-			queryRetail = "select DateOfData,state,CentreName,Longitude,latitude,Price from RetailOnionData as r, states as s , centres as c  where r.centreid = c.centreid and s.StateCode = c.StateCode and extract(year from dateofdata)=" + year + " and CentreName = '" + center + "' and extract(month from DateOfData) = " + month + " order by DateOfData"
-
-		if(month != "0" and year == "0"):
-			#Particular Month
-			query = "select dateofdata,state,mandiname, ArrivalsInTons, ModalPriceRsQtl from wholesaleoniondata as w,mandis m, states as s,  centres c where m.centreid = c.centreid and c.centreName = '" + center + "' and w.mandicode = m.mandicode and s.StateCode = c.StateCode and extract(month from dateofdata)="+month+"  order by dateofdata";
-			queryRetail = "select DateOfData,state,CentreName,Longitude,latitude,Price from RetailOnionData as r, states as s , centres as c  where r.centreid = c.centreid and s.StateCode = c.StateCode and CentreName = '" + center + "' and extract(month from DateOfData) = " + month + " order by DateOfData"
-
+    	else:
+                	
+                        # Wholesale : Date, State, Mandi, Arrival, Modal Price
+                        # Now we need to fetch data and form clusters
+                        # get the start month,year and end month,year
+                        start_year = request.forms.get('start_year')
+                        end_year = request.forms.get('end_year')
+                        start_month = request.forms.get('start_month')
+                        end_month = request.forms.get('end_month')
+                        
+                        period = "extract(year from dateofdata) >= " + start_year + " and extract(year from dateofdata) <=" + end_year + " and extract(month from dateofdata) >= " + start_month + " and extract(month from dateofdata) <=" + end_month
+                        
+                        if(option == "statewise"):
+                            if(state == "0"):
+                                    query = "select DateOfData, State, MandiName, ArrivalsInTons, ModalPriceRsQtl from wholesaleoniondata as w, STATES as s, mandis m where w.mandicode=m.mandicode and m.StateCode = s.StateCode and " + period + " order by dateofdata"
+                                    queryRetail = "select DateOfData,state,CentreName,Longitude,latitude,Price from RetailOnionData as r, states as s , centres as c where r.centreid = c.centreid and c.StateCode = s.StateCode and "+period+" order by dateofdata"                                                  
+                            else: 
+                                    query = "select DateOfData, State, MandiName, ArrivalsInTons, ModalPriceRsQtl from wholesaleoniondata as w, STATES as s , mandis m where w.mandicode=m.mandicode and m.StateCode = s.StateCode and State='"+ state+"' and "+period+" order by dateofdata"
+                                    queryRetail = "select DateOfData,state,CentreName,Longitude,latitude,Price from RetailOnionData as r, STATES as s  , centres as c where r.centreid = c.centreid and c.StateCode = s.StateCode and "+period+ " order by DateOfData"                    
+                        else: # option = "centerwise"   
+                                query = "select dateofdata,state,mandiname, ArrivalsInTons, ModalPriceRsQtl from wholesaleoniondata as w,mandis m, states as s,  centres c where m.centreid = c.centreid and c.centreName = '" + center + "' and w.mandicode = m.mandicode and s.StateCode = c.StateCode and "+period+ " order by dateofdata";
+                                queryRetail = "select DateOfData,state,CentreName,Longitude,latitude,Price from RetailOnionData as r, states as s , centres as c  where r.centreid = c.centreid and s.StateCode = c.StateCode and CentreName = '" + center + "' and " +period + " order by DateOfData"
+            
+                            
 
 
 	#Define our connection string

@@ -43,11 +43,7 @@
 			<td><input type="radio" name="opt" value="statewise" required>Statewise
 			<input type="radio" name="opt" value="centerwise" required>Centerwise</td>
 		</tr>
-		<tr>
-			<td align="right">Use Smoothed Data:<br> </td>
-			<td><input type="radio" name="smoothedData" value="Yes" required>Yes
-			<input type="radio" name="smoothedData" value="No" required>No (Original Data will be used)</td>
-		</tr>
+		
 		<tr class="alt">
 			<td align="right">Select Centers:</td>
 			<td><select name="center" style="width: 150px" > 
