@@ -99,7 +99,7 @@
 			</td>
 		</tr>
 		
-		<tr>
+		<tr class="alt">
 			
 			<td align="right"><b>Time input : Option 2 </b><br><br>
 								 Select Start Month: <br> <br>
@@ -169,7 +169,7 @@
 			<input type="radio" name="timeInput" value="option2" required>Option 2</td>
 		</tr>
 		
-		<tr>
+		<tr class="alt">
 			<td align="right">Data To Plot:</td>
 			<td>
 				<input type="checkbox" name="wholesalePriceC" value="wholesalePriceC" checked>Wholesale Price<br>
@@ -181,7 +181,7 @@
 				<input type="checkbox" name="rmwAnalysis" value="rmwAnalysis" checked>Wholesale minus Retail Analysis<br>
 			</td>
 		</tr>
-		<tr class="alt">
+		<tr>
 			<td colspan=2 style="padding-left:260px"><input type="Submit" value="Submit" name="Submit"/></td>
 		</tr>
 		</table>

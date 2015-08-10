@@ -743,7 +743,7 @@ def formCluster():
 		ax.plot(retailDiffDate,retailDiffPerc,color = 'orange' , label='Difference in retail price')
 	# ax.legend(['Wholesale Rate Per KG','Retail Rate Per KG','Absolute Difference (retail - wholesale)','Difference with respect to Wholesale Price','Difference in retail price'])
 
-	ax.legend(['Retail Rate Per KG','Difference in retail price'])
+	# ax.legend(['Retail Rate Per KG','Difference in retail price'])
 
 	# second axis to plot the arrival
 
@@ -758,7 +758,7 @@ def formCluster():
 
 	fig.set_size_inches(20,12)
 
-	# plt.show()
+	plt.show()
 	io = StringIO.StringIO()
 	fig.savefig(io, format='png')
 	data = io.getvalue().encode('base64')
