@@ -182,6 +182,11 @@
 			</td>
 		</tr>
 		<tr>
+			<td align="right">Apply Smoothing </td>
+			<td><input type="radio" name="smoothing" value="smoothing" required>Yes
+			<input type="radio" name="smoothing" value="noSmoothing" required>No</td>
+		</tr>
+		<tr class="alt">
 			<td colspan=2 style="padding-left:260px"><input type="Submit" value="Submit" name="Submit"/></td>
 		</tr>
 		</table>

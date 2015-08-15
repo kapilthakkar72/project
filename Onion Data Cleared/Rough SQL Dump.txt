@@ -144,3 +144,12 @@ correlation DECIMAL,
 lag INT,
 period_months INT
 );
+
+
+CREATE TABLE MovingAvgSmoothedData(
+dateofdata DATE,
+centreid INT,
+wholesaleprice DECIMAL,
+retailprice DECIMAL,
+arrivalsintons DECIMAL
+);
