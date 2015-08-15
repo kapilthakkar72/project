@@ -51,12 +51,15 @@ def smoothArray(dateofdata, array, end_date):
                 
                 last_index = len(new_data)-1
                 for j in range(last_index-5,last_index+1):
-                    if(new_data[j][1] != 0):
+                    if(new_data[j][1] != 0 and str(new_data[j][1]) != "None"):
                         sum = sum + new_data[j][1] * mul_factor
                         count = count + mul_factor
                     mul_factor = mul_factor +1
                     
-                new_data.append([start_date, (sum/count)])
+                if(count!=0):  
+                    new_data.append([start_date, (sum/count)])
+                else:
+                    new_data.append([start_date, 0])
                 
             start_date = start_date + datetime.timedelta(days=1)
             i = i+1 
@@ -72,12 +75,14 @@ def smoothArray(dateofdata, array, end_date):
                 
                 last_index = len(new_data)-1
                 for j in range(last_index-5,last_index+1):
-                    if(new_data[j][1] != 0):
+                    if(new_data[j][1] != 0 and str(new_data[j][1]) != "None"):
                         sum = sum + new_data[j][1] * mul_factor
                         count = count + mul_factor
                     mul_factor = mul_factor -1
-                    
-                new_data.append([start_date, (sum/count)])
+                if(count!=0):  
+                    new_data.append([start_date, (sum/count)])
+                else:
+                    new_data.append([start_date, 0])
             
             start_date = start_date + datetime.timedelta(days=1)
     
@@ -86,7 +91,7 @@ def smoothArray(dateofdata, array, end_date):
 
 def smoothPrices_Arrivals(centreid):
     
-    query = "select dateofdata, sum(ArrivalsInTons), avg(ModalPriceRsQtl)/100 from wholesaleoniondata as w,mandis m where m.centreid = " + str(centreid) + " and w.mandicode = m.mandicode group by dateofdata order by dateofdata;"
+    query = "select dateofdata, coalesce(sum(ArrivalsInTons),0), coalesce(avg(ModalPriceRsQtl)/100,0) from wholesaleoniondata as w,mandis m where m.centreid = " + str(centreid) + " and w.mandicode = m.mandicode group by dateofdata order by dateofdata;"
     
     conn_string = "host='localhost' dbname='onion' user='postgres' password='password'"
     conn = psycopg2.connect(conn_string)
@@ -94,9 +99,12 @@ def smoothPrices_Arrivals(centreid):
     cursor.execute(query)
     wholesaleRecords = cursor.fetchall()
 	
-    query = "select DateOfData,Price from RetailOnionData as r where r.centreid = "+ str(centreid) +" order by DateOfData"
+    query = "select DateOfData,coalesce(Price,0) from RetailOnionData as r where r.centreid = "+ str(centreid) +" order by DateOfData"
     cursor.execute(query)
     retailRecords = cursor.fetchall()
+    
+    if(not(len(wholesaleRecords) >1 and len(retailRecords) >1)):
+        return
     
     if(wholesaleRecords[len(wholesaleRecords)-1][0] < retailRecords[len(retailRecords)-1][0]):
         end_date = wholesaleRecords[len(wholesaleRecords)-1][0]
@@ -117,7 +125,18 @@ def smoothPrices_Arrivals(centreid):
     conn.close()
 
 if __name__ == "__main__":
-    centres = [44]
+    conn_string = "host='localhost' dbname='onion' user='postgres' password='password'" 
+    conn = psycopg2.connect(conn_string) 
+    cursor = conn.cursor()
+
+	# Get centers
+    query = "select distinct centreid from centres order by centreid"
+    cursor.execute(query)  
+    records = cursor.fetchall()
+    centres = []
+    for record in records:
+        centres.append(str(record[0]))
     for centre in centres:
         smoothPrices_Arrivals(centre)
+        print centre
     
