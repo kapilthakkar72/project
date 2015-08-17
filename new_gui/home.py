@@ -73,31 +73,47 @@ def graphPlot():
     retailPriceC = str(request.forms.get('retailPriceC'))
     arrivalC = str(request.forms.get('arrivalC'))
     year = request.forms.get('year')
+    absoluteDiff = request.forms.get('absoluteDiff')    
     
-    query = "SELECT dateofdata, wholesaleprice, retailprice , arrivalsintons FROM MovingAvgSmoothedData m, centres c where extract(year from dateofdata) = " + year + " and m.centreid = c.centreid and c.centrename ='" + center +"' order by dateofdata"
-    
-    conn_string = "host='localhost' dbname='onion' user='postgres' password='password'"
-    conn = psycopg2.connect(conn_string)
-    cursor = conn.cursor()
-    cursor.execute(query)
-    records = cursor.fetchall()
-    
-    dateofdata = [row[0] for row in records]
-    wp = [row[1] for row in records]
-    rp = [row[2] for row in records]
-    arrival = [row[3] for row in records]
-    
-    # Plot It
+    i = 1
     fig = plt.figure()
-    ax = fig.add_subplot(1,1,1)
-    if(wholesalePriceC == "wholesalePriceC"):
-        ax.plot(dateofdata,wp, color = 'r', label='Wholesale Rate Per KG') # Red color
-    if(retailPriceC == "retailPriceC"):
-        ax.plot(dateofdata,rp, color = 'b', label='Retail Rate Per KG')    # Blue color
     
-    if(arrivalC == "arrivalC"):
-        ax2 = ax.twinx()
-        ax2.plot(dateofdata,arrival,color = 'c', label = 'Arrival')
+    while(i<6):
+    
+        query = "SELECT dateofdata, wholesaleprice, retailprice , arrivalsintons FROM MovingAvgSmoothedData m, centres c where extract(year from dateofdata) = " + year + " and m.centreid = c.centreid and c.centrename ='" + center +"' order by dateofdata"
+        #query = "SELECT dateofdata, wholesaleprice, retailprice , arrivalsintons FROM MovingAvgSmoothedData m, centres c where m.centreid = c.centreid and c.centrename ='" + center +"' order by dateofdata"
+        
+        conn_string = "host='localhost' dbname='onion' user='postgres' password='password'"
+        conn = psycopg2.connect(conn_string)
+        cursor = conn.cursor()
+        cursor.execute(query)
+        records = cursor.fetchall()
+        
+        dateofdata = [row[0] for row in records]
+        wp = [row[1] for row in records]
+        rp = [row[2] for row in records]
+        arrival = [row[3] for row in records]
+        
+        absdiff = []
+        for j in range(0,len(wp)):
+            absdiff.append(rp[j]-wp[j])
+        
+        
+        # Plot It
+        
+        ax = fig.add_subplot(5,1,i)
+        if(wholesalePriceC == "wholesalePriceC"):
+            ax.plot(dateofdata,wp, color = 'r', label='Wholesale Rate Per KG') # Red color
+        if(retailPriceC == "retailPriceC"):
+            ax.plot(dateofdata,rp, color = 'b', label='Retail Rate Per KG')    # Blue color    
+        if(arrivalC == "arrivalC"):
+            ax.plot(dateofdata,arrival,color = 'c', label = 'Arrival')
+        if(absoluteDiff == "absoluteDiff"):
+            ax.plot(dateofdata,absdiff, color= 'b', label = 'Absolute Difference')
+            
+        i = i+1
+        year = int(year) + 1
+        year = str(year)
         
     fig.set_size_inches(20,12)
     plt.show()

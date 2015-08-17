@@ -73,7 +73,8 @@
 			<td>
 				<input type="checkbox" name="wholesalePriceC" value="wholesalePriceC" checked>Wholesale Price<br>
 				<input type="checkbox" name="retailPriceC" value="retailPriceC" checked>Retail Price <br>
-				<input type="checkbox" name="arrivalC" value="arrivalC" checked>Arrival <br
+				<input type="checkbox" name="arrivalC" value="arrivalC" checked>Arrival <br>
+				<input type="checkbox" name="absoluteDiff" value="absoluteDiff" checked>Absolute Difference <br>
 			</td>
 		</tr>
 		

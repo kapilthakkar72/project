@@ -84,8 +84,7 @@ def smoothArray(dateofdata, array, end_date):
                 else:
                     new_data.append([start_date, 0])
             
-            start_date = start_date + datetime.timedelta(days=1)
-    
+            start_date = start_date + datetime.timedelta(days=1)    
     return new_data
 
 
@@ -99,7 +98,7 @@ def smoothPrices_Arrivals(centreid):
     cursor.execute(query)
     wholesaleRecords = cursor.fetchall()
 	
-    query = "select DateOfData,coalesce(Price,0) from RetailOnionData as r where r.centreid = "+ str(centreid) +" order by DateOfData"
+    query = "select DateOfData,coalesce(Price,0) from RetailOnionData as r where r.centreid = "+ str(centreid) +" and extract(year from dateofdata) order by DateOfData"
     cursor.execute(query)
     retailRecords = cursor.fetchall()
     
