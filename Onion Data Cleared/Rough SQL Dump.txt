@@ -153,3 +153,5 @@ wholesaleprice DECIMAL,
 retailprice DECIMAL,
 arrivalsintons DECIMAL
 );
+
+COPY MovingAvgSmoothedData FROM 'C:\Users\KAPILT~1\Desktop\Project\ONIOND~1\MovingAvgSmoothedData.csv'  DELIMITER ',' CSV NULL AS 'NULL';
