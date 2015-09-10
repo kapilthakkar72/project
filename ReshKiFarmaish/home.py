@@ -1,0 +1,146 @@
+from bottle import route, run, debug, template, request, static_file, error, get, post, response,  static_file, view
+import requests
+import psycopg2
+import math
+import numpy as np
+from sklearn import cluster
+import psycopg2
+import sys
+import pprint
+import matplotlib.pyplot as plt
+import decimal
+from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+from matplotlib.figure import Figure
+import StringIO
+import matplotlib
+import bottle
+from scipy.stats.kde import gaussian_kde
+from scipy.stats import norm
+import scipy,numpy
+from scipy.interpolate import UnivariateSpline
+import scipy.stats as stats
+# import pywt
+
+
+html = '''
+<html>
+    <body>
+        <img src="data:image/png;base64,{}"  height="800" width="1100"/>
+    </body>
+</html>
+'''
+
+@route('/')
+def index():
+	return template('index')
+
+
+@route('/method2')
+def method2():
+	'''
+	Here I need to get the retail and wholesale Price... and compare their difference
+	But before that to get the input I need to give/provide user options to select the center/State
+	So this will just return the GUI ... 
+	But this can be copied from the method 1
+	Jay Yogeshwar!
+	'''
+	query = "Select state from states order by state"
+	#Define our connection string
+	conn_string = "host='localhost' dbname='onion' user='postgres' password='password'" 
+	# print the connection string we will use to connect
+	#print "Connecting to database\n	->%s" % (conn_string) 
+	# get a connection, if a connect cannot be made an exception will be raised here
+	conn = psycopg2.connect(conn_string) 
+	# conn.cursor will return a cursor object, you can use this cursor to perform queries
+	cursor = conn.cursor()
+	#print "Connected!\n"
+	# execute our Query
+	cursor.execute(query)  
+	# retrieve the records from the database
+	records = cursor.fetchall()
+	sts = []
+	for record in records:
+		sts.append(record[0])
+
+	# Get years
+	query = "select distinct extract(year from DateOfData) from WholeSaleOnionData order by extract(year from DateOfData)"
+	cursor.execute(query)  
+	records = cursor.fetchall()
+	yrs = []
+	for record in records:
+		yrs.append(int(record[0]))
+
+	# Get centers
+	query = "select distinct CentreName from centres order by CentreName"
+	cursor.execute(query)  
+	records = cursor.fetchall()
+	cts = []
+	for record in records:
+		cts.append(str(record[0]))
+
+
+	conn.close()
+	return template('method2Menu', states=sts, years=yrs, centers = cts)
+
+
+@post('/diffPlot')
+def formCluster():
+	# Get data from the form
+	center = request.forms.get('center')
+	wholesalePriceC = str(request.forms.get('wholesalePriceC'))
+	retailPriceC = str(request.forms.get('retailPriceC'))
+	arrivalC = str(request.forms.get('arrivalC'))
+    
+        start_year = request.forms.get('start_year')
+        end_year = request.forms.get('end_year')
+        start_month = request.forms.get('start_month')
+        end_month = request.forms.get('end_month')
+	
+
+	query = "select dateofdata, c.centreid, wholesaleprice, retailprice, arrivalsintons from centres c , movingavgsmootheddata m where c.centreid = m. centreid and c.centrename = '" + center + "' and extract(month from dateofdata) >= " + start_month + " and  extract(year from dateofdata) >= " + start_year + " and extract(month from dateofdata) <= " + end_month + " and  extract(year from dateofdata) <= " + end_year + " order by dateofdata";
+    
+
+	conn_string = "host='localhost' dbname='onion' user='postgres' password='password'" 
+	conn = psycopg2.connect(conn_string) 
+	cursor = conn.cursor()
+	cursor.execute(query)  
+	records = cursor.fetchall()
+
+	print "Query"
+	print query
+
+	conn.close()
+	
+	dateList= column(records,0)
+	priceW = np.array(column(records,2),dtype = float)
+	priceR = np.array(column(records,3),dtype = float)
+	arrival = np.array(column(records,4),dtype = float)
+    
+	print "Sum of Arrival: " + str(sum(arrival))
+	print "Min of WP: " + str(min(priceW))
+	print "Avg of WP: " + str(np.mean(priceW))
+	print "Max of WP: " + str(max(priceW))
+
+	fig = plt.figure()
+	ax = fig.add_subplot(1,1,1)
+	if(wholesalePriceC == "wholesalePriceC"):
+		ax.plot(dateList,priceW, color = 'r', label='Wholesale Rate Per KG') # Red color
+	if(retailPriceC == "retailPriceC"):
+		ax.plot(dateList,priceR, color = 'b', label='Retail Rate Per KG')    # Blue color
+	if(arrivalC == "arrivalC"):
+		ax.plot(dateList,arrival, color = 'b', label='Retail Rate Per KG')    # Blue color
+        
+    
+
+	fig.set_size_inches(20,12)
+
+	plt.show()
+	io = StringIO.StringIO()
+	fig.savefig(io, format='png')
+	data = io.getvalue().encode('base64')
+	return html.format(data)
+
+def column(matrix, i):
+    return [row[i] for row in matrix]
+
+run(host='localhost', port=8080, debug=True)
