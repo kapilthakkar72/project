@@ -155,3 +155,11 @@ arrivalsintons DECIMAL
 );
 
 COPY MovingAvgSmoothedData FROM 'C:\Users\KAPILT~1\Desktop\Project\ONIOND~1\MovingAvgSmoothedData.csv'  DELIMITER ',' CSV NULL AS 'NULL';
+
+CREATE TABLE expoAvgSmoothedData(
+dateofdata DATE,
+centreid INT,
+wholesaleprice DECIMAL,
+retailprice DECIMAL,
+arrivalsintons DECIMAL
+);

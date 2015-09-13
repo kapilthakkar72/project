@@ -52,63 +52,17 @@
 		<tr class="alt">
 			
 			<td align="right"><b>Time input</b><br><br>
-								 Select Start Month: <br> <br>
-								 Select Start Year:  <br> <br>
-								 Select End Month: <br> <br>
-								 Select End Year:  <br> <br>
+								 Select Start Date: <br> <br>
+								 Select End Date:  <br> <br>
+						
 								 
 			</td>
 			<td>
 				
-				<br><br>			
-				<select name="start_month" style="width: 150px" >
-					<option value="1" name="1">January</option>
-					<option value="2" name="2">February</option>
-					<option value="3" name="3">March</option>
-					<option value="4" name="4">April</option>
-					<option value="5" name="5">May</option>
-					<option value="6" name="6">June</option>
-					<option value="7" name="7">July</option>
-					<option value="8" name="8">August</option>
-					<option value="9" name="9">September</option>
-					<option value="10" name="10">October</option>
-					<option value="11" name="11">November</option>
-					<option value="12" name="12">December</option>
-				</select>
-				
+				<br><br>
+				<input type="date" name="start_date">
 				<br> <br>
-				
-				<select name="start_year" style="width: 150px" > 
-				%for y in years:
-					<option value={{ y }} name={{ y }}>{{ y }}</option>
-				%end 
-				</select>
-				
-				<br> <br>
-				
-				<select name="end_month" style="width: 150px" >
-					<option value="1" name="1">January</option>
-					<option value="2" name="2">February</option>
-					<option value="3" name="3">March</option>
-					<option value="4" name="4">April</option>
-					<option value="5" name="5">May</option>
-					<option value="6" name="6">June</option>
-					<option value="7" name="7">July</option>
-					<option value="8" name="8">August</option>
-					<option value="9" name="9">September</option>
-					<option value="10" name="10">October</option>
-					<option value="11" name="11">November</option>
-					<option value="12" name="12">December</option>
-				</select>
-				
-				<br> <br>
-				
-				<select name="end_year" style="width: 150px" > 
-					%for y in years:
-						<option value={{ y }} name={{ y }}>{{ y }}</option>
-					%end 
-				</select>
-				
+				<input type="date" name="end_date">
 				<br><br>			
 			</td>
 		</tr>

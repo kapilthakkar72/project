@@ -91,13 +91,10 @@ def formCluster():
 	retailPriceC = str(request.forms.get('retailPriceC'))
 	arrivalC = str(request.forms.get('arrivalC'))
     
-        start_year = request.forms.get('start_year')
-        end_year = request.forms.get('end_year')
-        start_month = request.forms.get('start_month')
-        end_month = request.forms.get('end_month')
-	
+        start_date = request.forms.get('start_date')
+        end_date = request.forms.get('end_date')	
 
-	query = "select dateofdata, c.centreid, wholesaleprice, retailprice, arrivalsintons from centres c , movingavgsmootheddata m where c.centreid = m. centreid and c.centrename = '" + center + "' and extract(month from dateofdata) >= " + start_month + " and  extract(year from dateofdata) >= " + start_year + " and extract(month from dateofdata) <= " + end_month + " and  extract(year from dateofdata) <= " + end_year + " order by dateofdata";
+	query = "select dateofdata, c.centreid, wholesaleprice, retailprice, arrivalsintons from centres c , movingavgsmootheddata m where c.centreid = m. centreid and c.centrename = '" + center + "' and dateofdata >= '" + start_date + "' and  dateofdata <= '" + end_date + "' order by dateofdata";
     
 
 	conn_string = "host='localhost' dbname='onion' user='postgres' password='password'" 
