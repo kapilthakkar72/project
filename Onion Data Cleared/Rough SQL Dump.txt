@@ -163,3 +163,13 @@ wholesaleprice DECIMAL,
 retailprice DECIMAL,
 arrivalsintons DECIMAL
 );
+
+CREATE TABLE  expoavgsmootheddata (
+dateofdata DATE,
+centreid INT,
+wholesaleprice DECIMAL,
+retailprice DECIMAL,
+arrivalsintons DECIMAL
+);
+
+COPY expoavgsmootheddata FROM 'C:\Users\KAPILT~1\Desktop\Project\ONIOND~1\expoavgsmootheddata.csv'  DELIMITER ',' CSV NULL AS 'NULL';
