@@ -1,0 +1,57 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Thesis.aux
+A level-1 auxiliary file: titlepage.aux
+A level-1 auxiliary file: certificate.aux
+A level-1 auxiliary file: abstract.aux
+A level-1 auxiliary file: acknowledgement.aux
+A level-1 auxiliary file: chapter1.aux
+A level-1 auxiliary file: chapter2.aux
+A level-1 auxiliary file: chapter3.aux
+A level-1 auxiliary file: chapter4.aux
+A level-1 auxiliary file: chapter5.aux
+The style file: plain.bst
+Database file #1: biblio.bib
+Warning--empty institution in Ernst
+You've used 4 entries,
+            2118 wiz_defined-function locations,
+            537 strings with 4679 characters,
+and the built_in function-call counts, 1249 in all, are:
+= -- 127
+> -- 51
+< -- 1
++ -- 23
+- -- 16
+* -- 90
+:= -- 219
+add.period$ -- 12
+call.type$ -- 4
+change.case$ -- 20
+chr.to.int$ -- 0
+cite$ -- 5
+duplicate$ -- 42
+empty$ -- 95
+format.name$ -- 16
+if$ -- 247
+int.to.chr$ -- 0
+int.to.str$ -- 4
+missing$ -- 3
+newline$ -- 23
+num.names$ -- 8
+pop$ -- 14
+preamble$ -- 1
+purify$ -- 16
+quote$ -- 0
+skip$ -- 28
+stack$ -- 0
+substring$ -- 98
+swap$ -- 4
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 16
+warning$ -- 1
+while$ -- 14
+width$ -- 5
+write$ -- 45
+(There was 1 warning)
