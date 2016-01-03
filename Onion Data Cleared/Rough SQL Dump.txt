@@ -164,6 +164,7 @@ retailprice DECIMAL,
 arrivalsintons DECIMAL
 );
 
+<<<<<<< HEAD
 CREATE TABLE  expoavgsmootheddata (
 dateofdata DATE,
 centreid INT,
@@ -173,3 +174,15 @@ arrivalsintons DECIMAL
 );
 
 COPY expoavgsmootheddata FROM 'C:\Users\KAPILT~1\Desktop\Project\ONIOND~1\expoavgsmootheddata.csv'  DELIMITER ',' CSV NULL AS 'NULL';
+
+// This table will store the weekly avg stuff
+create table weekData(
+sno SERIAL,
+startDate Date,
+endDate Date,
+centreid Int,
+arrival decimal,
+wholesalePrice decimal,
+retailprice decimal
+)
+
