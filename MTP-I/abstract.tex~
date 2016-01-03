@@ -1,0 +1,8 @@
+\begin{center}
+\LARGE{Abstract}
+\end{center}
+
+\vspace{0.5in}
+
+%replace \lipsum with your abstract
+Supply demand imbalance, natural calamities etc. may not always be the reason behind the rise in the price of a commodity. It may be a result of artificial supply deficit planned intelligently by traders’ nexus to earn more profits through manipulation of supply of commodity and hence indirectly controlling their prices. Our attempt is to locate such hikes in prices which seem suspicious (we call them anomalies). We try to detect such anomalies by stating some hypothesis first and then algorithmically try to find the time-line during which it violates the stated hypothesis.
