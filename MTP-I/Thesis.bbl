@@ -1,24 +1,24 @@
 \begin{thebibliography}{1}
 
-\bibitem{Bailey}
-D.~H. Bailey and P.~N. Swarztrauber.
-\newblock The fractional {F}ourier transform and applications.
-\newblock {\em SIAM Rev.}, 33(3):389--404, 1991.
+\bibitem{agmarknet}
+Agriculture marketing.
+\newblock \url{http://agmarknet.dac.gov.in/}.
+\newblock (Visited on 01/04/2016).
 
-\bibitem{Bay1}
-A.~Bayliss, C.~I. Goldstein, and E.~Turkel.
-\newblock An iterative method for the {H}elmholtz equation.
-\newblock {\em J. Comp. Phys.}, 49:443--457, 1983.
+\bibitem{retailpricecollection}
+fcainfoweb.nic.in/pmsver2/reports/report\_menu\_web.aspx.
+\newblock \url{http://fcainfoweb.nic.in/PMSver2/Reports/Report_Menu_web.aspx}.
+\newblock (Visited on 01/04/2016).
 
-\bibitem{Ernst}
-O.~Ernst and G.~Golub.
-\newblock A domain decomposition approach to solving the {H}elmholtz equation
-  with a radiation boundary condition.
-\newblock Technical Report NA-92-08, August 1992.
+\bibitem{CCI}
+PG~Chengappa, AV~Manjunatha, Vikas Dimble, and Khalil Shah.
+\newblock Competitive assessment of onion markets in india.
+\newblock {\em Institute for Social and Economic Change. Competition commission
+  of India}, 1:86, 2012.
 
-\bibitem{Gold3}
-C.~I. Goldstein.
-\newblock Multigrid methods for elliptic problems in unbounded domains.
-\newblock {\em SIAM J. Numer. Anal.}, 30:159--183, 1993.
+\bibitem{sugarcane}
+Sandip Sukhtankar.
+\newblock Sweetening the deal? political connections and sugar mills in india.
+\newblock Technical report, Mimeo, 2008.
 
 \end{thebibliography}
