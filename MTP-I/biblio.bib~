@@ -1,0 +1,91 @@
+% Onion paper by CCI
+@ARTICLE{CCI,
+   title={Competitive Assessment of Onion Markets in India},
+  author={Chengappa, PG and Manjunatha, AV and Dimble, Vikas and Shah, Khalil},
+  journal={Institute for Social and Economic Change. Competition commission of India},
+  volume={1},
+  pages={86},
+  year={2012}
+}
+
+% Sugarcane paper
+@techreport{sugarcane,
+  title={Sweetening the Deal? Political Connections and Sugar Mills in India},
+  author={Sukhtankar, Sandip},
+  year={2008},
+  institution={Mimeo}
+}
+
+% PHD Thesis where window based correlation etc is described
+@phdthesis{phdthesisdc,
+  title={Anomaly detection of time series},
+  author={Cheboli, Deepthi},
+  year={2010},
+  school={University of Minnesota}
+}
+
+% NASA paper - graph based anomaly detection technique
+@inproceedings{nasa,
+  title={Detection and Characterization of Anomalies in Multivariate Time Series.},
+  author={Cheng, Haibin and Tan, Pang-Ning and Potter, Christopher and Klooster, Steven A},
+  booktitle={SDM},
+  pages={413--424},
+  year={2009},
+  organization={SIAM}
+}
+
+% ARIMA on multiple time sries
+@article{arima,
+  title={Forecasting accounting data: A multiple time-series analysis},
+  author={Hillmer, SC and Larcker, DF and Schroeder, DA},
+  journal={Journal of Forecasting},
+  volume={2},
+  number={4},
+  pages={389--404},
+  year={1983},
+  publisher={Wiley Online Library}
+}
+
+% first paper on Stock market, statd some base methods
+@article{stock1,
+  title={MARKET ABUSE DETECTION: A METHODOLOGY BASED ON FINANCIAL TIME SERIES},
+  author={Barucci, Emilio and Squillantini, Emanuele}
+}
+
+% Book on R , NASA paper implemented : Read name as "NASA R Book"
+@book{nasarbook,
+  title={Practical Graph Mining with R},
+  author={Samatova, Nagiza F and Hendrix, William and Jenkins, John and Padmanabhan, Kanchana and Chakraborty, Arpan},
+  year={2013},
+  publisher={CRC Press}
+}
+
+% Second paper on stock market with hypothesis
+@article{stock2,
+  title={Unchecked manipulations, price--volume relationship and market efficiency: Evidence from emerging markets},
+  author={Azad, ASM Sohel and Azmat, Saad and Fang, Victor and Edirisuriya, Piyadasa},
+  journal={Research in International Business and Finance},
+  volume={30},
+  pages={51--71},
+  year={2014},
+  publisher={Elsevier}
+}
+
+@misc{agmarknet,
+author = {},
+title = {Agriculture Marketing},
+howpublished = {\url{http://agmarknet.dac.gov.in/}},
+month = {},
+year = {},
+note = {(Visited on 01/04/2016)}
+}
+
+@misc{fcain13:online,
+author = {},
+title = {fcainfoweb.nic.in/PMSver2/Reports/Report\_Menu\_web.aspx},
+howpublished = {\url{http://fcainfoweb.nic.in/PMSver2/Reports/Report_Menu_web.aspx}},
+month = {},
+year = {},
+note = {(Visited on 01/04/2016)}
+}
+
