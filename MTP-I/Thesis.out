@@ -16,9 +16,12 @@
 \BOOKMARK [1][-]{section.3.6}{How to Define Anomaly?}{chapter.3}% 16
 \BOOKMARK [2][-]{subsection.3.6.1}{Summary Of News Atricles}{section.3.6}% 17
 \BOOKMARK [1][-]{section.3.7}{Characteristics of anomaly}{chapter.3}% 18
-\BOOKMARK [0][-]{chapter.4}{CHAPTER NAME}{}% 19
-\BOOKMARK [1][-]{section.4.1}{SECTION NAME}{chapter.4}% 20
-\BOOKMARK [1][-]{section.4.2}{SECTION NAME}{chapter.4}% 21
-\BOOKMARK [1][-]{section.4.3}{SECTION NAME}{chapter.4}% 22
-\BOOKMARK [0][-]{chapter.5}{Conclusion}{}% 23
-\BOOKMARK [0][-]{chapter*.6}{Bibliography}{}% 24
+\BOOKMARK [1][-]{section.3.8}{Hypothesis}{chapter.3}% 19
+\BOOKMARK [0][-]{chapter.4}{Proposed Design and Framework}{}% 20
+\BOOKMARK [1][-]{section.4.1}{System Design}{chapter.4}% 21
+\BOOKMARK [2][-]{subsection.4.1.1}{Input Time-series}{section.4.1}% 22
+\BOOKMARK [2][-]{subsection.4.1.2}{Relation Between Time-series \(Hypothesis\)}{section.4.1}% 23
+\BOOKMARK [2][-]{subsection.4.1.3}{Automatic Selection of Functions and Processing Time series}{section.4.1}% 24
+\BOOKMARK [2][-]{subsection.4.1.4}{Highlight Anomalies}{section.4.1}% 25
+\BOOKMARK [0][-]{chapter.5}{Conclusion}{}% 26
+\BOOKMARK [0][-]{chapter*.6}{Bibliography}{}% 27
