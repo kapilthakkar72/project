@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.1.3)  5 JAN 2016 18:51
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.1.3)  5 JAN 2016 18:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -902,12 +902,13 @@ Package pdftex.def Info: ./Figures/System.png used on input line 8.
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
-) [26]
+ [26]) [27]
 \openout2 = `chapter5.aux'.
 
- (./chapter5.tex
+
+(./chapter5.tex
 Chapter 5.
-) [27
+) [28
 
 
 
@@ -1004,7 +1005,7 @@ Underfull \hbox (badness 2809) in paragraph at lines 51--55
 tp : / / www . ndtv . com /
  []
 
-[28
+[29
 
 
 
@@ -1085,7 +1086,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 77--81
 
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 160.
- [29]
+ [30]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 160.
  (./Thesis.aux (./titlepage.aux) (./certificate.aux) (./abstract.aux)
 (./acknowledgement.aux) (./chapter1.aux) (./chapter2.aux) (./chapter3.aux)
@@ -1101,8 +1102,8 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 160.
  ) 
 Here is how much of TeX's memory you used:
- 8723 strings out of 493304
- 129007 string characters out of 6139872
+ 8724 strings out of 493304
+ 129014 string characters out of 6139872
  318394 words of memory out of 5000000
  11847 multiletter control sequences out of 15000+600000
  13472 words of font info for 49 fonts, out of 8000000 for 9000
@@ -1117,10 +1118,10 @@ st/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmtt12.pfb>
-Output written on Thesis.pdf (38 pages, 1728021 bytes).
+Output written on Thesis.pdf (39 pages, 1729249 bytes).
 PDF statistics:
- 544 PDF objects out of 1000 (max. 8388607)
- 465 compressed objects within 5 object streams
- 110 named destinations out of 1000 (max. 500000)
+ 548 PDF objects out of 1000 (max. 8388607)
+ 468 compressed objects within 5 object streams
+ 111 named destinations out of 1000 (max. 500000)
  302 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -40,8 +40,14 @@ Normal behavior of the time series should be stated somehow, so that we can dete
 
 \end{itemize}
 
+If correlation exists, then we may also take input from user maximum lag factor to consider. If not provided any, then by default it will be taken as -15 to +15. We may also ask user, whether to consider only positive lag, negative lag or both types of lag.
+
 \subsection {Automatic Selection of Functions and Processing Time series}
 
+Now, after taking proper input, it is time to execute appropriate function for each of the provided input types.
+
 \subsection {Highlight Anomalies}
+
+After execution, display what tests were performed and what were their results. Detailed values will be provided if asked specifically. Different Graphs/Charts possible with the output can be generated on user demand. Provide an option to user whether he would like to see the results with some different threshold value other than the taken by library. Provide all the functionalities present in the system and ask user, if he wants to run some specific tests on the input time series.
 
 
