@@ -27,45 +27,46 @@ Warning--to sort, need author or key in Govt81:online
 Warning--to sort, need author or key in Onion68:online
 Warning--to sort, need author or key in Keral99:online
 Warning--to sort, need author or key in Rains78:online
-You've used 17 entries,
+Warning--there's a number but no volume in kapur2011quid
+You've used 21 entries,
             2118 wiz_defined-function locations,
-            578 strings with 7294 characters,
-and the built_in function-call counts, 3072 in all, are:
-= -- 306
-> -- 45
-< -- 0
-+ -- 28
-- -- 10
-* -- 110
-:= -- 397
-add.period$ -- 51
-call.type$ -- 17
-change.case$ -- 57
+            603 strings with 7886 characters,
+and the built_in function-call counts, 4411 in all, are:
+= -- 444
+> -- 106
+< -- 1
++ -- 52
+- -- 30
+* -- 201
+:= -- 620
+add.period$ -- 64
+call.type$ -- 21
+change.case$ -- 78
 chr.to.int$ -- 0
-cite$ -- 32
-duplicate$ -- 124
-empty$ -- 382
-format.name$ -- 10
-if$ -- 735
+cite$ -- 37
+duplicate$ -- 177
+empty$ -- 482
+format.name$ -- 30
+if$ -- 1017
 int.to.chr$ -- 0
-int.to.str$ -- 17
-missing$ -- 1
-newline$ -- 88
-num.names$ -- 4
-pop$ -- 158
+int.to.str$ -- 21
+missing$ -- 4
+newline$ -- 108
+num.names$ -- 12
+pop$ -- 179
 preamble$ -- 1
-purify$ -- 39
+purify$ -- 57
 quote$ -- 0
-skip$ -- 86
+skip$ -- 124
 stack$ -- 0
-substring$ -- 92
-swap$ -- 16
-text.length$ -- 0
+substring$ -- 169
+swap$ -- 30
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 68
-warning$ -- 15
-while$ -- 5
-width$ -- 19
-write$ -- 159
-(There were 15 warnings)
+type$ -- 84
+warning$ -- 16
+while$ -- 18
+width$ -- 23
+write$ -- 204
+(There were 16 warnings)

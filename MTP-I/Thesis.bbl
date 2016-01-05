@@ -91,11 +91,32 @@ Why onion prices are so high.
   \url{http://www.ndtv.com/india-news/why-onion-prices-are-so-high-442629}.
 \newblock (Visited on 01/05/2016).
 
+\bibitem{phdthesisdc}
+Deepthi Cheboli.
+\newblock {\em Anomaly detection of time $\series$}.
+\newblock PhD thesis, University of Minnesota, 2010.
+
+\bibitem{nasa}
+Haibin Cheng, Pang-Ning Tan, Christopher Potter, and Steven~A Klooster.
+\newblock Detection and characterization of anomalies in multivariate time
+  $\series$.
+\newblock In {\em SDM}, pages 413--424. SIAM, 2009.
+
 \bibitem{CCI}
 PG~Chengappa, AV~Manjunatha, Vikas Dimble, and Khalil Shah.
 \newblock Competitive assessment of onion markets in india.
 \newblock {\em Institute for Social and Economic Change. Competition commission
   of India}, 1:86, 2012.
+
+\bibitem{kapil}
+SC~Hillmer, DF~Larcker, and DA~Schroeder.
+\newblock Forecasting accounting data: A multiple time series analysis.
+\newblock {\em Journal of Forecasting}, 2(4):389--404, 1983.
+
+\bibitem{kapur2011quid}
+Devesh Kapur and Milan Vaishnav.
+\newblock Quid pro quo: Builders, politicians, and election finance in india.
+\newblock {\em Center for Global Development Working Paper}, (276), 2011.
 
 \bibitem{sugarcane}
 Sandip Sukhtankar.

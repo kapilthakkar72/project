@@ -16,6 +16,18 @@
   institution={Mimeo}
 }
 
+% ARIMA on multiple time sries
+@article{kapil,
+  title={Forecasting accounting data: A multiple time series analysis},
+  author={Hillmer, SC and Larcker, DF and Schroeder, DA},
+  journal={Journal of Forecasting},
+  volume={2},
+  number={4},
+  pages={389--404},
+  year={1983},
+  publisher={Wiley Online Library}
+}
+
 % Cement Case study
 @article{kapur2011quid,
   title={Quid pro quo: Builders, politicians, and election finance in India},
@@ -27,7 +39,7 @@
 
 % PHD Thesis where window based correlation etc is described
 @phdthesis{phdthesisdc,
-  title={Anomaly detection of time series},
+  title={Anomaly detection of time $\series$},
   author={Cheboli, Deepthi},
   year={2010},
   school={University of Minnesota}
@@ -35,7 +47,7 @@
 
 % NASA paper - graph based anomaly detection technique
 @inproceedings{nasa,
-  title={Detection and Characterization of Anomalies in Multivariate Time Series.},
+  title={Detection and Characterization of Anomalies in Multivariate Time $\Series$.},
   author={Cheng, Haibin and Tan, Pang-Ning and Potter, Christopher and Klooster, Steven A},
   booktitle={SDM},
   pages={413--424},
@@ -43,21 +55,10 @@
   organization={SIAM}
 }
 
-% ARIMA on multiple time sries
-@article{arima,
-  title={Forecasting accounting data: A multiple time-series analysis},
-  author={Hillmer, SC and Larcker, DF and Schroeder, DA},
-  journal={Journal of Forecasting},
-  volume={2},
-  number={4},
-  pages={389--404},
-  year={1983},
-  publisher={Wiley Online Library}
-}
 
 % first paper on Stock market, statd some base methods
 @article{stock1,
-  title={MARKET ABUSE DETECTION: A METHODOLOGY BASED ON FINANCIAL TIME SERIES},
+  title={MARKET ABUSE DETECTION: A METHODOLOGY BASED ON FINANCIAL TIME $\SERIES$},
   author={Barucci, Emilio and Squillantini, Emanuele}
 }
 
@@ -71,7 +72,7 @@
 
 % Second paper on stock market with hypothesis
 @article{stock2,
-  title={Unchecked manipulations, price--volume relationship and market efficiency: Evidence from emerging markets},
+  title={Unchecked manipulations, price--$\volume$ relationship and market efficiency: Evidence from emerging markets},
   author={Azad, ASM Sohel and Azmat, Saad and Fang, Victor and Edirisuriya, Piyadasa},
   journal={Research in International Business and Finance},
   volume={30},
@@ -214,9 +215,6 @@ month = {},
 year = {},
 note = {(Visited on 01/05/2016)}
 }
-
-
-
 
 
 
