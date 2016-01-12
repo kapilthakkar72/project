@@ -93,13 +93,13 @@ Why onion prices are so high.
 
 \bibitem{phdthesisdc}
 Deepthi Cheboli.
-\newblock {\em Anomaly detection of time $\series$}.
+\newblock {\em Anomaly detection of time series}.
 \newblock PhD thesis, University of Minnesota, 2010.
 
 \bibitem{nasa}
 Haibin Cheng, Pang-Ning Tan, Christopher Potter, and Steven~A Klooster.
 \newblock Detection and characterization of anomalies in multivariate time
-  $\series$.
+  series.
 \newblock In {\em SDM}, pages 413--424. SIAM, 2009.
 
 \bibitem{CCI}
@@ -108,7 +108,7 @@ PG~Chengappa, AV~Manjunatha, Vikas Dimble, and Khalil Shah.
 \newblock {\em Institute for Social and Economic Change. Competition commission
   of India}, 1:86, 2012.
 
-\bibitem{kapil}
+\bibitem{arima}
 SC~Hillmer, DF~Larcker, and DA~Schroeder.
 \newblock Forecasting accounting data: A multiple time series analysis.
 \newblock {\em Journal of Forecasting}, 2(4):389--404, 1983.
