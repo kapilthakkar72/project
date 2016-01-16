@@ -1,0 +1,274 @@
+10/04/2015 01:17:392Execution Stopped Timed out after 3000 seconds waiting for presence of any elements located by By.id: ListBox1
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=37.0, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: cdac023e-d9aa-450f-8b1d-077bb4f966f9[Ljava.lang.StackTraceElement;@c0cb64
+10/04/2015 09:02:251Execution Stopped Window not found. The browser window may have been closed.
+Command duration or timeout: 213 milliseconds
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=37.0, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 236b6420-9ec8-4ae5-bf58-967affbe7d6b[Ljava.lang.StackTraceElement;@1462a88
+10/04/2015 12:19:848Execution Stopped Timed out after 3000 seconds waiting for presence of any elements located by By.id: ListBox1
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=37.0, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 405fe3ed-3657-44fb-9b75-30bded424798[Ljava.lang.StackTraceElement;@5ddfbc
+10/04/2015 14:55:554Execution Stopped Error communicating with the remote browser. It may have died.
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: driver.version: RemoteWebDriver[Ljava.lang.StackTraceElement;@9a45fd
+10/04/2015 16:16:302Execution Stopped Error communicating with the remote browser. It may have died.
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: driver.version: RemoteWebDriver[Ljava.lang.StackTraceElement;@1691611
+10/04/2015 17:20:94Execution Stopped Error communicating with the remote browser. It may have died.
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: driver.version: RemoteWebDriver[Ljava.lang.StackTraceElement;@a5da
+10/04/2015 19:13:441Execution Stopped Error communicating with the remote browser. It may have died.
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: driver.version: RemoteWebDriver[Ljava.lang.StackTraceElement;@13a28b5
+10/04/2015 19:59:520Execution Stopped Error communicating with the remote browser. It may have died.
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: driver.version: RemoteWebDriver[Ljava.lang.StackTraceElement;@4f44c5
+10/04/2015 21:43:210Execution Stopped Timed out after 3000 seconds waiting for presence of any elements located by By.id: ListBox1
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=37.0, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 99472c52-fd3f-4349-9ec8-eb46765ba98a[Ljava.lang.StackTraceElement;@6a9df5
+10/04/2015 23:39:635Execution Stopped Error communicating with the remote browser. It may have died.
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: driver.version: RemoteWebDriver[Ljava.lang.StackTraceElement;@115e9af
+11/04/2015 00:55:79Execution Stopped Timed out after 3000 seconds waiting for presence of any elements located by By.id: ListBox1
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=37.0, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: f50e0e95-5d03-4dff-af2f-633f9bb73e7f[Ljava.lang.StackTraceElement;@1eb098f
+12/04/2015 23:56:705Process aborting Since Another Process is already running 
+12/04/2015 23:59:649Execution Stopped Window not found. The browser window may have been closed.
+Command duration or timeout: 284 milliseconds
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=37.0, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 2c19f9bd-5d73-4d3e-91b0-c5c04818b9ec[Ljava.lang.StackTraceElement;@1e82d43
+13/04/2015 00:00:186Execution Stopped Window not found. The browser window may have been closed.
+Command duration or timeout: 453 milliseconds
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=37.0, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 62454be5-4e63-4b9c-bf6c-13d0a5e93d3a
+*** Element info: {Using=id, value=drpDwnYear}[Ljava.lang.StackTraceElement;@14bac49
+13/04/2015 01:14:621Execution Stopped Timed out after 3000 seconds waiting for presence of any elements located by By.id: ListBox1
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=37.0, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 98785b3b-3b4a-4a0b-9d9d-7742980d75cd[Ljava.lang.StackTraceElement;@c79c02
+13/04/2015 12:08:636Execution Stopped Error communicating with the remote browser. It may have died.
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: driver.version: RemoteWebDriver[Ljava.lang.StackTraceElement;@2c167e
+13/04/2015 13:27:23Execution Stopped Timed out after 3000 seconds waiting for presence of any elements located by By.id: ListBox1
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=37.0, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 01b10839-8a96-4b00-ab2b-31fe0dbcc3e9[Ljava.lang.StackTraceElement;@e56b4d
+13/04/2015 16:11:22Execution Stopped Unable to locate element: {"method":"id","selector":"GridView1"}
+Command duration or timeout: 156 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=37.0, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 26ed3c0a-e5c9-4564-a0c9-693b24c369a0
+*** Element info: {Using=id, value=GridView1}[Ljava.lang.StackTraceElement;@133da86
+13/04/2015 16:13:46Execution Stopped Window not found. The browser window may have been closed.
+Command duration or timeout: 308 milliseconds
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=37.0, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 85aa5c6a-ec5d-4a67-b57d-6f05f7d4e822[Ljava.lang.StackTraceElement;@2b4c69
+13/04/2015 17:42:909Execution Stopped Error communicating with the remote browser. It may have died.
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: driver.version: RemoteWebDriver[Ljava.lang.StackTraceElement;@1ea5941
+13/04/2015 18:54:406Execution Stopped Error communicating with the remote browser. It may have died.
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: driver.version: RemoteWebDriver[Ljava.lang.StackTraceElement;@dff674
+13/04/2015 20:21:824Execution Stopped Timed out after 3000 seconds waiting for presence of any elements located by By.id: ListBox1
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=37.0, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 02e2ce88-22a5-43db-863c-34fd8d851d51[Ljava.lang.StackTraceElement;@11d19ff
+13/04/2015 23:08:510Execution Stopped Error communicating with the remote browser. It may have died.
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: driver.version: RemoteWebDriver[Ljava.lang.StackTraceElement;@1ff7a54
+14/04/2015 00:50:488Execution Stopped Error communicating with the remote browser. It may have died.
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: driver.version: RemoteWebDriver[Ljava.lang.StackTraceElement;@1e1dce6
+14/04/2015 01:23:728Execution Stopped Error communicating with the remote browser. It may have died.
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: driver.version: RemoteWebDriver[Ljava.lang.StackTraceElement;@732726
+14/04/2015 03:51:800Execution Stopped Timed out after 3000 seconds waiting for presence of any elements located by By.id: ListBox1
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=37.0, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 9aa47dca-22e8-4562-a6a9-8f300085dfd8[Ljava.lang.StackTraceElement;@2815cc
+14/04/2015 17:34:321Execution Stopped Timed out after 3000 seconds waiting for presence of any elements located by By.id: ListBox1
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=37.0, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: b5cf4142-162b-4b4d-bb93-b4125d446566[Ljava.lang.StackTraceElement;@ad24ae
+14/04/2015 18:35:228Execution Stopped Error communicating with the remote browser. It may have died.
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: driver.version: RemoteWebDriver[Ljava.lang.StackTraceElement;@18031da
+14/04/2015 19:15:580Execution Stopped Error communicating with the remote browser. It may have died.
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: driver.version: RemoteWebDriver[Ljava.lang.StackTraceElement;@1dbd580
+14/04/2015 20:33:431Execution Stopped Error communicating with the remote browser. It may have died.
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: driver.version: RemoteWebDriver[Ljava.lang.StackTraceElement;@57b017
+14/04/2015 21:52:455Execution Stopped Timed out after 3000 seconds waiting for presence of any elements located by By.id: ListBox1
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=37.0, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: ded126bd-7c49-4b91-9f0d-ff300afd6d7b[Ljava.lang.StackTraceElement;@1cab9d9
+15/04/2015 00:13:160Execution Stopped Error communicating with the remote browser. It may have died.
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: driver.version: RemoteWebDriver[Ljava.lang.StackTraceElement;@1e5871d
+15/04/2015 04:17:570Execution Stopped Timed out after 3000 seconds waiting for presence of any elements located by By.id: ListBox1
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=37.0, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: dd340bf5-9a01-4bb7-931f-1e8307641cca[Ljava.lang.StackTraceElement;@19216cb
+15/04/2015 19:32:297Execution Stopped Error communicating with the remote browser. It may have died.
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: driver.version: RemoteWebDriver[Ljava.lang.StackTraceElement;@1ecbd6c
+15/04/2015 19:34:384Execution Stopped Unable to locate element: {"method":"id","selector":"btnSubmit"}
+Command duration or timeout: 173 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=37.0, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: e3d886d6-9423-4142-bccb-e869bb87c7a4
+*** Element info: {Using=id, value=btnSubmit}[Ljava.lang.StackTraceElement;@1ee8714
+15/04/2015 21:12:319Execution Stopped Timed out after 3000 seconds waiting for presence of any elements located by By.id: ListBox1
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=37.0, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 7466d051-a3ca-4aa9-9f7e-064e80033702[Ljava.lang.StackTraceElement;@a84346
+16/04/2015 11:09:115Execution Stopped Error communicating with the remote browser. It may have died.
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: driver.version: RemoteWebDriver[Ljava.lang.StackTraceElement;@1232cf
+16/04/2015 12:55:438Execution Stopped Timed out after 3000 seconds waiting for presence of any elements located by By.id: ListBox1
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=37.0, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: b0e301b8-2b14-4b8e-9bbb-12b1573064b5[Ljava.lang.StackTraceElement;@a0a7a9
+16/04/2015 13:07:555Execution Stopped Element is not currently visible and so may not be interacted with
+Command duration or timeout: 169 milliseconds
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=37.0, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 59278ac4-47b2-42e9-aa93-7be198190af8[Ljava.lang.StackTraceElement;@1f65e45
+16/04/2015 13:59:52Execution Stopped Error communicating with the remote browser. It may have died.
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: driver.version: RemoteWebDriver[Ljava.lang.StackTraceElement;@64cb0c
+16/04/2015 14:28:717Execution Stopped Error communicating with the remote browser. It may have died.
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: driver.version: RemoteWebDriver[Ljava.lang.StackTraceElement;@7c141d
+16/04/2015 15:34:155Execution Stopped Error communicating with the remote browser. It may have died.
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: driver.version: RemoteWebDriver[Ljava.lang.StackTraceElement;@1ca8eaf
+16/04/2015 17:17:536Execution Stopped Error communicating with the remote browser. It may have died.
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: driver.version: RemoteWebDriver[Ljava.lang.StackTraceElement;@1bcd95a
+16/04/2015 18:15:364Execution Stopped Error communicating with the remote browser. It may have died.
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: driver.version: RemoteWebDriver[Ljava.lang.StackTraceElement;@1f2cfda
+16/04/2015 18:59:243Execution Stopped Error communicating with the remote browser. It may have died.
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: driver.version: RemoteWebDriver[Ljava.lang.StackTraceElement;@50256f
+16/04/2015 20:19:174Execution Stopped Error communicating with the remote browser. It may have died.
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: driver.version: RemoteWebDriver[Ljava.lang.StackTraceElement;@7e799e
+16/04/2015 21:51:941Execution Stopped Error communicating with the remote browser. It may have died.
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: driver.version: RemoteWebDriver[Ljava.lang.StackTraceElement;@b2d002
+16/04/2015 22:55:715Execution Stopped Error communicating with the remote browser. It may have died.
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: driver.version: RemoteWebDriver[Ljava.lang.StackTraceElement;@1d8da75
+17/04/2015 00:08:334Execution Stopped Error communicating with the remote browser. It may have died.
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: driver.version: RemoteWebDriver[Ljava.lang.StackTraceElement;@10c23a3
+17/04/2015 00:51:861Execution Stopped Error communicating with the remote browser. It may have died.
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: driver.version: RemoteWebDriver[Ljava.lang.StackTraceElement;@121b93c
+17/04/2015 00:51:575Execution Stopped Element not found in the cache - perhaps the page has changed since it was looked up
+Command duration or timeout: 2.04 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=37.0, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 325784a5-6e39-4e20-85d6-d57185c4bf2b
+*** Element info: {Using=tag name, value=option}[Ljava.lang.StackTraceElement;@156875e
+17/04/2015 02:46:862Execution Stopped Timed out after 3000 seconds waiting for presence of any elements located by By.id: ListBox1
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=37.0, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: cd921113-71bb-45c7-bcc5-9b2807a106fb[Ljava.lang.StackTraceElement;@111db81
+17/04/2015 10:24:444Execution Stopped Timed out after 3000 seconds waiting for presence of any elements located by By.id: ListBox1
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=37.0, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 3019a841-14d1-4128-8c12-1989518b4ca7[Ljava.lang.StackTraceElement;@1408857
+17/04/2015 18:35:70Execution Stopped Error communicating with the remote browser. It may have died.
+Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
+System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
+Driver info: driver.version: RemoteWebDriver[Ljava.lang.StackTraceElement;@c0bf84
