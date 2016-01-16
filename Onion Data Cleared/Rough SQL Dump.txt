@@ -23,7 +23,8 @@ COPY wholesaleoniondata FROM 'C:\Users\KAPILT~1\Downloads\ONIOND~1\Wholesaledata
  centreid   integer
  );
  
- COPY mandis FROM 'C:\Users\KAPILT~1\Downloads\ONIOND~1\Mandi.csv' DELIMITER ',' NULL AS 'NULL' CSV;
+COPY mandis(mandiname,statecode,latitude,longitude,centreid) FROM '/home/reshma/Desktop/Reshma/Major/project/Onion Data Cleared/Mandi.csv' DELIMITER ',' NULL AS 'NULL' CSV;
+
 
  create table states (
  statecode SERIAL,

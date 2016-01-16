@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package wholesalepricecrawler_2;
 
 import java.io.BufferedReader;
@@ -23,25 +18,24 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.browserlaunchers.locators.GoogleChromeLocator;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-/**
- *
- * @author reshma
- */
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
     
     static File logFile;
+    static DateFormat dateFormat ;
+    static Date date ;
     
     public static void main(String[] args) throws IOException {
         logFile =new File("logFile.txt");
+        dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:SS");
+        date = new Date();
         //if file doesnt exists, then create it
            if (!logFile.exists()) {
                logFile.createNewFile();
@@ -89,21 +83,7 @@ public class Main {
             }
             catch(Exception e)
             {
-                try{
-       
-                    FileWriter fileWritter = new FileWriter(logFile.getName(), true);
-                    BufferedWriter bufferWritter = new BufferedWriter(fileWritter);
-
-                    DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:SS");
-                        //get current date time with Date()
-                    Date date = new Date();
-                    bufferWritter.write(dateFormat.format(date)+"Error in parsing Date "+e.getMessage()+e.getStackTrace());
-                    bufferWritter.close();
-                }
-                catch(Exception ex)
-                {
-                    System.err.println("Error in Probably creating file ");
-                } 
+                writeToLogFile(dateFormat.format(date)+"Error in parsing Date "+e.getMessage()+e.getStackTrace(), "Error");
             }
   
             
@@ -174,7 +154,7 @@ public class Main {
                 for (int k = 0; k < allCells.size(); k++) {
 
                     WebElement cell = allCells.get(k);
-                    cell.click();
+                    //cell.click();
 
                     //System.out.println("Cell :: " + cell.getText());
                     if (k == 0) {
@@ -184,13 +164,16 @@ public class Main {
                         month = monYear[0];
                     }
 
+                    //if (cell.findElements(By.tagName("a")).size() > 0) {
                     if (cell.findElements(By.tagName("a")).size() > 0) {
+                        
                         dateOfData = tyear + "-" + month + "-" + cell.getText();
                         Date date=null;
                          try {
                                   date = (Date) formatter.parse(dateOfData.trim());
                              } catch (Exception e) {
                                 System.err.println("Error in convertion of dateofData " + dateOfData);
+                                writeToLogFile("Error in convertion of dateofData " + dateOfData, "Error");
                                 System.exit(0);
                             }
                          if(date.compareTo(RefDate)>=0)
@@ -308,24 +291,28 @@ public class Main {
     }
     else
     {
-      try{
-       
-            FileWriter fileWritter = new FileWriter(logFile.getName(), true);
-            BufferedWriter bufferWritter = new BufferedWriter(fileWritter);
-            
-            DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:SS");
-                //get current date time with Date()
-            Date date = new Date();
-            bufferWritter.write(dateFormat.format(date)+"Process aborting Since Another Process is already running \n");
-            bufferWritter.close();
-        }
-        catch(Exception e)
-        {
-            System.err.println("Error in Probably creating file ");
-        }
-       
+        writeToLogFile(dateFormat.format(date)+"Process aborting Since Another Process is already running", "Error");      
     }
     
+    }
+    
+    public static void writeToLogFile(String Message,String Type)
+    {
+          try{
+       
+                    FileWriter fileWritter = new FileWriter(logFile.getName(), true);
+                    BufferedWriter bufferWritter = new BufferedWriter(fileWritter);
+
+                    DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:SS");
+                       
+                    Date date = new Date();
+                    bufferWritter.write(dateFormat.format(date)+" "+Type+":::"+ Message);
+                    bufferWritter.close();
+                }
+                catch(Exception ex)
+                {
+                    System.err.println("Error in Probably creating file ");
+                } 
     }
 
     private static void parsePage(WebDriver driver, Date dateOfData) throws IOException {
@@ -480,7 +467,7 @@ public class Main {
         int mandiCode = 0;
         try {
             Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Agriculture",
+            c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/onion",
                     "postgres", "password");
 
             c.setAutoCommit(true);
@@ -535,7 +522,7 @@ public class Main {
         int stateCode = 0;
         try {
             Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Agriculture",
+            c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/onion",
                     "postgres", "password");
 
             c.setAutoCommit(true);
@@ -587,7 +574,7 @@ public class Main {
         int commodityCode = 0;
         try {
             Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Agriculture",
+            c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/onion",
                     "postgres", "password");
 
             c.setAutoCommit(true);
@@ -638,7 +625,7 @@ public class Main {
         int CommQualityCode = 0;
         try {
             Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Agriculture",
+            c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/onion",
                     "postgres", "password");
 
             c.setAutoCommit(true);
@@ -697,7 +684,7 @@ public class Main {
         Statement stmt = null;
         try {
             Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Agriculture",
+            c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/onion",
                     "postgres", "password");
 
             c.setAutoCommit(true);
@@ -780,7 +767,7 @@ public class Main {
         Statement stmt = null;
         try {
             Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Agriculture",
+            c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/onion",
                     "postgres", "password");
 
             c.setAutoCommit(true);
