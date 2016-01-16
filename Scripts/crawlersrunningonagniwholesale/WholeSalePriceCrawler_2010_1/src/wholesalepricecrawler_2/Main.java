@@ -184,7 +184,7 @@ public
                         {
 
                             WebElement cell = allCells.get(k);
-                            cell.click();
+                            //cell.click();
 
                             System.out.println("Cell :: " + cell.getText());
                             if (k == 0)
