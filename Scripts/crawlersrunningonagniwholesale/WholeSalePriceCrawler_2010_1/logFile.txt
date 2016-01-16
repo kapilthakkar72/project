@@ -272,3 +272,29 @@ Session ID: 3019a841-14d1-4128-8c12-1989518b4ca7[Ljava.lang.StackTraceElement;@1
 Build info: version: '2.45.0', revision: '32a636c', time: '2015-03-05 22:01:35'
 System info: host: 'agni', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'i386', os.version: '2.6.32-73-generic-pae', java.version: '1.8.0_40'
 Driver info: driver.version: RemoteWebDriver[Ljava.lang.StackTraceElement;@c0bf84
+16/01/2016 18:21:945Process aborting Since Another Process is already running 
+16/01/2016 18:22:893Execution Stopped Element not found in the cache - perhaps the page has changed since it was looked up
+Command duration or timeout: 21 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '2.49.0', revision: '365eeb4', time: '2016-01-13 18:33:29'
+System info: host: 'Kapil', ip: '127.0.0.1', os.name: 'Linux', os.arch: 'amd64', os.version: '3.13.0-24-generic', java.version: '1.8.0_31'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=43.0.4, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 45247172-20d7-4048-ad8f-0bcefe1dd104
+*** Element info: {Using=tag name, value=a}[Ljava.lang.StackTraceElement;@11bd0f3b
+16/01/2016 18:25:790Execution Stopped Element not found in the cache - perhaps the page has changed since it was looked up
+Command duration or timeout: 7 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '2.49.0', revision: '365eeb4', time: '2016-01-13 18:33:29'
+System info: host: 'Kapil', ip: '127.0.0.1', os.name: 'Linux', os.arch: 'amd64', os.version: '3.13.0-24-generic', java.version: '1.8.0_31'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=43.0.4, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 92d8bf40-f55c-47e3-a5e4-64c148719195[Ljava.lang.StackTraceElement;@2bfc268b
+16/01/2016 18:27:834Execution Stopped Element not found in the cache - perhaps the page has changed since it was looked up
+Command duration or timeout: 7 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '2.49.0', revision: '365eeb4', time: '2016-01-13 18:33:29'
+System info: host: 'Kapil', ip: '127.0.0.1', os.name: 'Linux', os.arch: 'amd64', os.version: '3.13.0-24-generic', java.version: '1.8.0_31'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=43.0.4, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: aa45e6d0-25eb-4e13-80a8-e05503592e4d[Ljava.lang.StackTraceElement;@2bfc268b

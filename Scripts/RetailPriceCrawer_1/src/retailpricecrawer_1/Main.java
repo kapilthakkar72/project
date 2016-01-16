@@ -130,9 +130,8 @@ public
                     System.err.println("Error in Probably creating file ");
                 }
             }
-            System.out.println("Check 1 ");
+            
             WebDriver driver = new FirefoxDriver();
-            System.out.println("Check 2");
 
             DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
             Calendar cal = Calendar.getInstance();
@@ -142,10 +141,8 @@ public
             for (int i = 1; i < 5110; i++)
             {
 
-                System.out.println("Check 3 ");
                 driver.get("http://fcainfoweb.nic.in/PMSver2/Reports/Report_Menu_web.aspx");
 
-                System.out.println("Check 4 ");
                 WebElement option = driver.findElement(By.id("MainContent_Rbl_Rpt_type_0"));
 
                 option.click();
@@ -187,7 +184,7 @@ public
 
                 driver.findElement(By.id("btn_back")).click();
 
-                cal.add(Calendar.DAY_OF_YEAR, -1);
+                cal.add(Calendar.DAY_OF_YEAR, +1);
                 dateTofetch = dateFormat.format(cal.getTime());
 
                 System.out.println("Run Complete " + i);
@@ -370,12 +367,15 @@ public
                                     {
                                         // Could not find center into the database
                                         String stateName = getStateName(centerName);
+                                        System.out.println("STATE NAME FETCHED FROM GOOGLE API: "+stateName + "... ");
                                         int stateCode = getStateCode(stateName);
-
+                                        System.out.println("GOT STATE CODE");
                                         String location[] = new String[2];
 
                                         location = fetchLocation(centerName, stateName);
+                                        System.out.println("FETCHED LOCATION");
                                         centerCode = InsertIntoCenter(centerName, stateCode, location[0], location[1]);
+                                        
                                     }
                                     else
                                     {
@@ -423,6 +423,11 @@ public
         System.out.println("API " + api);
         URL url = new URL(api);
         HttpURLConnection httpConnection = (HttpURLConnection) url.openConnection();
+        
+        // Setting Proxy
+        Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("10.10.78.62", 3128));
+        httpConnection = (HttpURLConnection) url.openConnection(proxy);
+        
         httpConnection.connect();
         responseCode = httpConnection.getResponseCode();
         if (responseCode == 200)
@@ -435,9 +440,7 @@ public
                 System.out.println(httpConnection.getContent().toString());
                 Document document = builder.parse(httpConnection.getInputStream());
                 System.out.print("Document Stream: " + document.toString());
-                System.out.println("check1");
                 document.getDocumentElement().normalize();
-                System.out.println("check2");
                 NodeList nList = document.getElementsByTagName("result");
 
                 System.out.println("check3 " + nList.getLength());
@@ -453,13 +456,26 @@ public
                 NodeList addrsComponts = eElement.getElementsByTagName("address_component");
 
                 int addrssCount = addrsComponts.getLength();
+                String statename = "";
+                for(int i=0;i<addrssCount;i++) {
+                    // For each address component
+                    Element addElement = (Element) addrsComponts.item(i);
+                    NodeList types = addElement.getElementsByTagName("type");
+                    // Check if first type is administrative_area_level_1
+                    Element type = (Element) types.item(0);
+                    if(type.getTextContent().equals("administrative_area_level_1"))
+                    {
+                        statename = addElement.getElementsByTagName("long_name").item(0).getTextContent();
+                        return statename;
+                    }
+                }
 
-                Element statedetails = (Element) addrsComponts.item(addrssCount - 2); //Selecting second last address_cmponent in result to pick state
+                //Element statedetails = (Element) addrsComponts.item(addrssCount - 3); //Selecting second last address_cmponent in result to pick state
 
-                System.out.println("State of city Entered : " + statedetails.getElementsByTagName("long_name").item(0).getTextContent());
+                //System.out.println("State of city Entered : " + statedetails.getElementsByTagName("long_name").item(0).getTextContent());
 
-                String stateCode = statedetails.getElementsByTagName("long_name").item(0).getTextContent();
-                return stateCode;
+                //String stateCode = statedetails.getElementsByTagName("long_name").item(0).getTextContent();
+                return statename;
             }
             catch (Exception e)
             {
@@ -594,7 +610,7 @@ public
 
             c.setAutoCommit(true);
             stmt = c.createStatement();
-            String centerInsert = "Insert into centres(centrename,StateCode,longitude,latitude) Values(?,?,?,?,?)";
+            String centerInsert = "Insert into centres(centrename,StateCode,longitude,latitude) Values(?,?,?,?)";
 
             String centerSelect = "Select * from centres WHERE centrename ilike ? AND StateCode=?";
 
