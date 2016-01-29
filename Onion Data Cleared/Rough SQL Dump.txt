@@ -23,26 +23,27 @@ COPY wholesaleoniondata FROM 'C:\Users\KAPILT~1\Downloads\ONIOND~1\Wholesaledata
  centreid   integer
  );
  
- COPY mandis FROM 'C:\Users\KAPILT~1\Downloads\ONIOND~1\Mandi.csv' DELIMITER ',' NULL AS 'NULL' CSV;
+COPY mandis(mandiname,statecode,latitude,longitude,centreid) FROM '/home/reshma/Desktop/Reshma/Major/project/Onion Data Cleared/Mandi.csv' DELIMITER ',' NULL AS 'NULL' CSV;
+
 
  create table states (
- statecode int,
+ statecode SERIAL,
  state varchar(100)
  );
 
- COPY states(state,statecode) FROM 'C:\Users\KAPILT~1\Downloads\ONIOND~1\States.csv' DELIMITER ',' NULL AS 'NULL' CSV;
 
+COPY states(state) FROM '/home/kapil/Desktop/project/Onion Data Cleared/States.csv'  DELIMITER ',' NULL AS 'NULL' CSV;
  
  create table centres(
- CentreId INT,
+ CentreId SERIAL,
  statecode INT,
  centrename varchar(100),
  longitude DECIMAL,
  latitude DECIMAL
  );
 
- COPY centres FROM 'C:\Users\KAPILT~1\Downloads\ONIOND~1\centres.csv' DELIMITER ',' NULL AS 'NULL' CSV;
- 
+COPY centres(statecode,centrename,longitude,latitude) FROM '/home/kapil/Desktop/project/Onion Data Cleared/centres.csv'  DELIMITER ',' NULL AS 'NULL' CSV;
+
 CREATE TABLE RetailOnionData(
     DateOfData DATE,
     CentreId INT,
