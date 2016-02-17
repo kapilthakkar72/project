@@ -59,7 +59,7 @@ def correlation(arr1, arr2, maxlag, pos=1, neg=1):
     return result
 
 '''
-This function takes 5 arguments:
+This function takes 2 arguments:
 arr1: Series of the form (lag,correlation)
 positive_correlation: true if we are looking for maximum positive correlation, else false
 
@@ -81,7 +81,7 @@ def getMaxCorr(arar1,positive_correlation):
         return (minLag,corr)
 
 '''
-This function takes 5 arguments:
+This function takes 7 arguments:
 arr1: Series 1
 arr2: Series 2
 maxlag: maximum lag to consider
