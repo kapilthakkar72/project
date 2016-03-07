@@ -4,7 +4,7 @@ import numpy as np
 from sklearn import  linear_model
 import matplotlib.pyplot as plt
 from scipy.stats import norm
-
+from Utility import MADThreshold
 '''
 This function takes 5 arguments:
 x_series: independent variable
@@ -13,7 +13,7 @@ param: Defines what to be treated as anomaly depending on its value as follows:
         0: Values going out of range, both with positive and negative error
         1: Values with potitive errors
         -1: Values with negative errors
-default_threshold: Whether to use default threshold used by system using MOD test or user defined threshold
+default_threshold: Whether to use default threshold used by system using MAD test or user defined threshold
 threshold: Threshold value if it is used defined and default_threshold is 'False'
 
 returns Following tuple:
@@ -29,16 +29,27 @@ returns Following tuple:
 Requirements: Length of both the series should be equal
 '''
 def linear_regression(x_series, y_series, param = 0, default_threshold = True, threshold = 0):
+    # print "x_series"
+    # print x_series
+    # print "y_series"
+    # print y_series
+    x_series = np.array(x_series)
+    y_series = np.array(y_series)
+    x_series = x_series.reshape(len(x_series),1)
+    y_series = y_series.reshape(len(y_series),1)
+    print x_series
+    print x_series.shape
+    print y_series.shape
     # Create linear regression object
     regr = linear_model.Lars()
     # Train the model using the training sets
     regr.fit(x_series, y_series)
     # Plot outputs
-    plt.scatter( x_series, y_series,  color='black')
-    plt.plot(x_series, regr.predict(x_series), color='blue',linewidth=3)
-    plt.xticks(())
-    plt.yticks(())
-    plt.show()
+    # plt.scatter( x_series, y_series,  color='black')
+    # plt.plot(x_series, regr.predict(x_series), color='blue',linewidth=3)
+    # plt.xticks(())
+    # plt.yticks(())
+    # plt.show()
     
     # Array to store differences between original and predicted
     diff = []
@@ -55,7 +66,7 @@ def linear_regression(x_series, y_series, param = 0, default_threshold = True, t
     
     # Finding outliers
     if(default_threshold == True):
-        outVal=  1.4826*numpy.median(numpy.array(diff))
+        (_,outVal)=  MADThreshold(diff)
     else:
         outVal = threshold
     
@@ -63,4 +74,28 @@ def linear_regression(x_series, y_series, param = 0, default_threshold = True, t
     for i in range(0,len(diff)):
         if(diff[i][4] > outVal):
             results.append(diff[i])
+    print "DIFF:"
+    print diff
     return (results,regr)
+
+'''
+This function takes 2 arguments:
+
+result_of_lr: Result of function "linear_regression"
+any_series: Any CSV in the format of 2 columns (Date,Value), date will be used
+
+Returns array of tuples of the form (start_date,x_value,y_value,predicted_y_value,difference_between_predicted_and_actual_y_value)
+
+'''
+def anomalies_from_linear_regression(result_of_lr, any_series):
+    result = []
+    print "RESULT OF LR"
+    print result_of_lr
+    #print "Check 1"
+    for i in range(0,len(result_of_lr)):
+        #print "Check 2"
+        #print "First : " + str(result_of_lr[i][0])
+        #return result
+        start_date = any_series[result_of_lr[i][0]][0]
+        result.append((start_date,result_of_lr[i][1],result_of_lr[i][2],result_of_lr[i][3],result_of_lr[i][4]))
+    return result
