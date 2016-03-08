@@ -29,19 +29,12 @@ returns Following tuple:
 Requirements: Length of both the series should be equal
 '''
 def linear_regression(x_series, y_series, param = 0, default_threshold = True, threshold = 0):
-    # print "x_series"
-    # print x_series
-    # print "y_series"
-    # print y_series
     x_series = np.array(x_series)
     y_series = np.array(y_series)
     x_series = x_series.reshape(len(x_series),1)
     y_series = y_series.reshape(len(y_series),1)
-    print x_series
-    print x_series.shape
-    print y_series.shape
     # Create linear regression object
-    regr = linear_model.Lars()
+    regr = linear_model.LinearRegression()
     # Train the model using the training sets
     regr.fit(x_series, y_series)
     # Plot outputs
@@ -55,27 +48,25 @@ def linear_regression(x_series, y_series, param = 0, default_threshold = True, t
     diff = []
 
     for i in range(0,len(x_series)):
-        x = y_series[i] - regr.predict(x_series[i])
-        x = (i,x_series[i],y_series[i],regr.predict(x_series[i]),x)
+        x = (y_series[i][0] - regr.predict(x_series[i])[0]) / regr.predict(x_series[i])[0] * 100
+        temp = (i,x_series[i][0],y_series[i][0],regr.predict(x_series[i])[0],x)
         if(param == 0):
-            diff.append(abs(x))
+            diff.append(temp)
         elif(param == 1 and x>0):
-            diff.append(x)
+            diff.append(temp)
         elif(param == -1 and x<0):
-            diff.append(x)
+            diff.append(temp)
     
     # Finding outliers
     if(default_threshold == True):
-        (_,outVal)=  MADThreshold(diff)
+        diff_vals = [abs(x[4]) for x in diff]
+        (_,outVal)=  MADThreshold(diff_vals)
     else:
         outVal = threshold
-    
     results = []
     for i in range(0,len(diff)):
-        if(diff[i][4] > outVal):
+        if(abs(diff[i][4]) > outVal):
             results.append(diff[i])
-    print "DIFF:"
-    print diff
     return (results,regr)
 
 '''
@@ -89,13 +80,32 @@ Returns array of tuples of the form (start_date,x_value,y_value,predicted_y_valu
 '''
 def anomalies_from_linear_regression(result_of_lr, any_series):
     result = []
-    print "RESULT OF LR"
-    print result_of_lr
-    #print "Check 1"
     for i in range(0,len(result_of_lr)):
-        #print "Check 2"
-        #print "First : " + str(result_of_lr[i][0])
-        #return result
         start_date = any_series[result_of_lr[i][0]][0]
         result.append((start_date,result_of_lr[i][1],result_of_lr[i][2],result_of_lr[i][3],result_of_lr[i][4]))
     return result
+
+######################################################################
+##                       TESTING CODE                               ##
+######################################################################
+'''
+import random
+
+#a = [random.randint(1,100) for _ in range(50)]
+#b = [random.randint(1,100) for _ in range(50)]
+from Utility import csv2array
+wholesale = csv2array('/home/kapil/Desktop/project/library/MumbaiWholesalePriceSmoothed.csv')
+retail = csv2array('/home/kapil/Desktop/project/library/MumbaiRetailPriceSmoothed.csv')
+wholesale_price = []
+retail_price = []
+for x in wholesale:
+    wholesale_price.append(float(x[1]))
+
+for x in retail:
+    retail_price.append(float(x[1]))
+
+# arr = window_correlation(wholesale_price,retail_price,10,30)
+linear_result = linear_regression(wholesale_price,retail_price, 1)
+
+print linear_result[0]
+'''

@@ -16,7 +16,7 @@ def home():
     return '''
         <form action="/home" method="post">
             Number Of CSVs: <input name="noOfCSVs" type="text" />
-            <input value="Login" type="submit" />
+            <input value="Submit" type="submit" />
         </form>
     '''
 
@@ -164,7 +164,7 @@ def hypothesisTesting():
 				resultString += "Date &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; X Val &nbsp;&nbsp;&nbsp;&nbsp; Y Val &nbsp;&nbsp;&nbsp;&nbsp; Expected Y Val &nbsp;&nbsp;&nbsp;&nbsp; Difference <br>"
 				for dataPoint in anomalies_from_lr:
 					resultString += str(dataPoint[0]) + "&nbsp;&nbsp;&nbsp;&nbsp;" + str(dataPoint[1]) + "&nbsp;&nbsp;&nbsp;&nbsp;" + str(dataPoint[2]) + "&nbsp;&nbsp;&nbsp;&nbsp;" + str(dataPoint[3]) + "&nbsp;&nbsp;&nbsp;&nbsp;" + str(dataPoint[4]) + "<br>" 
-				return resultString
+				return plotGraph(csv1,csv2,anomalies_from_correlation)
 			elif(relation == -2):				
 				pass
 				

@@ -49,14 +49,14 @@ def slopeBasedDetection(series1,smoothed1,series2,smoothed2,next_val_to_consider
         for x in positive_slopes:
             temp.append(x[2])
         (_,positive_threshold) = MADThreshold(temp)
-        print "Positive Threshold Value:" + str(positive_threshold)
+        # print "Positive Threshold Value:" + str(positive_threshold)
         
     if(default_threshold == True):
         temp = []
         for x in negative_slopes:
             temp.append(x[2])
         (negative_threshold,_) = MADThreshold(temp)
-        print "Negative Threshold Value:" + str(negative_threshold)
+        # print "Negative Threshold Value:" + str(negative_threshold)
         
     for i in range(0,len(positive_slopes)):
         if(positive_slopes[i][2] > positive_threshold):

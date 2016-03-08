@@ -1,6 +1,16 @@
 import numpy
 import numpy as np
 import csv
+import matplotlib.pyplot as plt
+import datetime
+import StringIO
+import plotly
+from plotly.graph_objs import Scatter, Layout
+import plotly.plotly as py
+import plotly.graph_objs as go
+from bottle import route, run, debug, template, request, static_file, error, get, post, response,  static_file, view
+import plotly.plotly as py
+py.sign_in('mcs142124', 'p7p80472qt')
 
 '''
 This function takes one argument:
@@ -69,3 +79,67 @@ def formatCSV2Array(z):
     for row in z:
         result.append((row[0],float(row[1])))
     return result
+
+def plotGraph(series1,series2,anomalies):
+    dates = [datetime.datetime.strptime(x[0], "%Y-%m-%d").date() for x in series1]
+    s1 = [x[1] for x in series1]
+    s2 = [x[1] for x in series2]
+    html = '''
+    <html>
+        <body>
+            <img src="data:image/png;base64,{}"  height="800" width="1100"/>
+        </body>
+    </html>
+    '''
+    fig = plt.figure()
+    ax = fig.add_subplot(1,1,1)
+    ax.plot(dates,s1,'r')
+    ax.plot(dates,s2,'b')
+    
+    # Highlighting Anomalies
+    for i in range(0,len(anomalies)):
+        # ax.axvspan(datetime.datetime.strptime(anomalies[i][0], "%Y-%m-%d").date(), datetime.datetime.strptime(anomalies[i][1], "%Y-%m-%d").date(), color='y', alpha=0.5, lw=0)
+        ax.axvspan(anomalies[i][0], anomalies[i][1], color='y', alpha=0.5, lw=0)
+    
+    
+    fig.set_size_inches(20,12)
+    plt.show()
+    io = StringIO.StringIO()
+    fig.savefig(io, format='png')
+    data = io.getvalue().encode('base64')
+    
+    trace1 = go.Scatter(
+    x=dates,
+    y=s1,
+    name='Series 1'
+    )
+    trace2 = go.Scatter(
+        x=dates,
+        y=s2,
+        name='Series 2',
+        yaxis='y2'
+    )
+    data = [trace1, trace2]
+    layout = go.Layout(
+        title='Correlation Test',
+        yaxis=dict(
+            title='Series 1'
+        ),
+        yaxis2=dict(
+            title='Series 2',
+            titlefont=dict(
+                color='rgb(148, 103, 189)'
+            ),
+            tickfont=dict(
+                color='rgb(148, 103, 189)'
+            ),
+            overlaying='y',
+            side='right'
+        )
+    )
+    fig = go.Figure(data=data, layout=layout)
+    # plot_url = plotly.offline.plot(fig, filename='graph1', auto_open=False)
+    temp = plotly.offline.plot( fig, filename='graph1')
+    print "Kapil"
+    print temp
+    return template('graphPlot', graph=temp)
