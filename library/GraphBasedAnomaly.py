@@ -1,8 +1,16 @@
+'''
+Author: Kapil Thakkar
+Reference: 
+Cheng, H., Tan, P.N., Potter, C. and Klooster, S.A., 2009, January. Detection and Characterization of Anomalies in Multivariate Time Series. In SDM (Vol. 9, pp. 413-424).
+
+'''
+
+
 import numpy
 from math import exp
 from numpy import linalg as LA
 from numpy import matrix
-
+from numpy import linalg
 # Similarity Measure using RBF Function
 '''
 This function takes 2 arguments:
@@ -134,4 +142,59 @@ def normalise(K):
             K[i][j] = K[i][j] / sumOfCols[j]
     return K
 
+'''
+Prforms random walk on matrix M
+Returns Connectivity Vector c
+'''
+def randomWalk(S, damping_factor = 0.5, max_iterations = 25, epsilon = 0.0001):
+    # Get number of points
+    n = len(S)
+    # Initialise Connectivity Vector c
+    c_old = numpy.empty(n)
+    c_old.fill(0)
+    c_old = numpy.array(c_old)[numpy.newaxis]
+    c_old = c_old.transpose()
+    # Preparing damping_vector
+    damping_vector = numpy.empty(n)
+    damping_vector.fill(float(damping_factor) / float(n))
+    damping_vector = numpy.array(damping_vector)[numpy.newaxis]
+    damping_vector = damping_vector.transpose()
     
+    S = numpy.matrix(S)
+    c_old = numpy.matrix(c_old)
+    damping_vector = numpy.matrix(damping_vector)
+    
+    c = 0
+    for i in range(0,max_iterations):
+        c = damping_vector + (1-damping_factor) * S.transpose() * c_old
+        delta = numpy.linalg.norm(c-c_old)
+        if (delta < epsilon):
+            break
+        c_old = c
+    return c
+
+'''
+Anomaly Detection by Random Walk on Graph
+Takes Two arguments,
+Predictor Variable : List of list
+Target Variable: Single List but as a list inside list too
+Returns result of random Walk
+'''
+
+def graphBasedAnomaly(PredictorVariable, TargetVariable):
+    # Get Kernel Matrices for both 
+    Kx = rbfSimilarity(PredictorVariable)
+    Ky = rbfSimilarity(TargetVariable)
+    # Align Them
+    Ka = kernelAlignment(Kx,Ky)
+    # Normalise Them
+    S = normalise(Ka)
+    # Apply Random Walk on normalised matrix
+    result = randomWalk(S)
+    return result
+
+'''
+Testing
+'''
+
+print graphBasedAnomaly([[1,2,3],[1,2,3],[1,2,3]],[[1,2,3]])
