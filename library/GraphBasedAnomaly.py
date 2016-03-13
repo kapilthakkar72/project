@@ -68,14 +68,19 @@ def numeratorForWeights(v,Ky):
     n = len(v)
     v = numpy.array(v)[numpy.newaxis]
     vt = v.transpose()
-    vvt = v * vt
+    # Convert both of them to matrix
+    v= numpy.matrix(v)
+    vt= numpy.matrix(vt)
+    # TODO: CHECK
+    # vvt = v * vt
+    vvt = vt * v
+    vvt = numpy.array(vvt)
     frobeniusInnerProduct = 0
     for i in range(0,n):
         for j in range(0,n):
             frobeniusInnerProduct += (vvt[i][j] * Ky[i][j])            
     return frobeniusInnerProduct
         
-
 '''
 Given eigenvalues, eigenvectors and Ky, calculates weight parameters alpha-i
 '''
@@ -100,6 +105,7 @@ def alignedKernelMatrix(alpha, eigenvectors):
     Ka.fill(0)
     
     for i in range(0,n):
+        # TODO: CHECK
         Ka += (alpha[i] * eigenvectors * eigenvectors.transpose())
     return Ka
 
@@ -168,6 +174,7 @@ def randomWalk(S, damping_factor = 0.5, max_iterations = 25, epsilon = 0.0001):
     for i in range(0,max_iterations):
         c = damping_vector + (1-damping_factor) * S.transpose() * c_old
         delta = numpy.linalg.norm(c-c_old)
+        # TODO: CHECK
         if (delta < epsilon):
             break
         c_old = c
