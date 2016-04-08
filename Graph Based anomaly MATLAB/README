@@ -1,0 +1,54 @@
+Matlab code for Random Walk Anomaly Detection
+=============================================
+
+Author: Haibin Cheng
+
+The following Matlab code (getanomaly.m) computes the anomaly score of a time 
+series using 2 approaches: moving average or random walk. Details of the 
+algorithm can be found in the following two references:
+
+    1. Haibin Cheng, Pang-Ning Tan, Christopher Potter, Steve Klooster.
+       Detection and Characterization of Anomalies in Multivariate Time 
+       Series. Proc  of SIAM International Conference on Data Mining Proc of 
+       the SIAM International Conference on Data Mining, 2009.
+
+    2. Haibin Cheng, Pang-Ning Tan, Christopher Potter, Steve Klooster. Data 
+       Mining for Visual Exploration and Detection of Ecosystem Disturbances, 
+       Proc of 16th ACM SIGSPATIAL International Conference on Advances in 
+       Geographic Information Systems (ACM GIS), November, 2008
+
+The getanomaly function takes 2 input: data and threshold. Details of the
+function are given below.
+
+The anomaly detection function can be invoked the following way:
+
+   matlab> [indcnt,score] = getanomaly(data,thres);
+
+where: 
+
+data is a row vector that represents a time series
+thres is a threshold vector:
+score returns the anomaly score for each point in the time series
+indcnt retuns the start point and duration of the detected anomaly
+
+The threshold vector can be set as follows:
+
+thres = [-1.4 12 1 1 60 2 1 1];  to compute anomaly detection using moving average approach
+thres  = [-1.4 6 1 1 60 2 1 2];  to compute anomaly detection using random walk approach
+
+thres(1) = threshold, blow the value is claimed as anomaly
+thres(2) = mvd, minimum duration to define an anomaly, for example,
+           an anomaly can be defined as 12 consecutive months of abnormally
+           low values (for moving average) or 6 consecutive months low values
+           (for random walk)
+thres(6) = 2 --- detrend the time series, otherwise no detrending
+thres(8) = method (1-- moving average, 2--random walk)
+
+The remaining entries in the threshold vector can be set arbitrarily (they were  
+used for setting thresholds in a Matlab event visualization tool).
+
+thres(3) = Land Variable, FPAR for 1 (for disturbance event detection)
+thres(4) = start Index 1 for start of 5 years
+thres(5) = end Index 60 for end of 5 years
+thres(7) = Continent Index
+
