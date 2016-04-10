@@ -9,7 +9,7 @@ import time
 import datetime
 ##Globals##
 ####Urls
-csv_file = 'output.csv'
+csv_file = 'Articles/output.csv'
 df_urls = pd.read_csv(csv_file)
 
 ####Alchemy object
@@ -18,7 +18,7 @@ alchemyapi = AlchemyAPI()
 ####Diffbot object
 diffbot = DiffbotClient()
 token = API_TOKEN
-api = "Articles/article"
+api = "article"
 
 ####PSQL cursor
 conn_string = "host='localhost' dbname='news_articles' user='postgres' password='password'" 
@@ -32,7 +32,7 @@ def set_meta_table(article_hash,opinion_section,source_id,search_text_hash,exact
     
     print('')
     print "## running diffbot!"
-    response = diffbot.request(exact_url,token,api,timeout=50000)
+    response = diffbot.request(exact_url,token,api,timeout=50000, verify = False)
     #print type(response)
 
     print "## diffbot parsing done!"
@@ -86,7 +86,7 @@ def set_meta_table(article_hash,opinion_section,source_id,search_text_hash,exact
                 search_text_hash,word_count,analysis_datetime, \
                 document_sentiment,pos_on_page,page_number,score)
         print "##Printing query -"
-        print query%t
+        print (query%t).encode("utf-8")
 
         try:
             print " "
@@ -95,12 +95,12 @@ def set_meta_table(article_hash,opinion_section,source_id,search_text_hash,exact
                     onlytext,source_id, source_url, exact_url, opinion_section,\
                     search_text_hash,word_count,analysis_datetime, \
                     document_sentiment,pos_on_page,page_number,score))
-            db.commit()
+            conn.commit()
             print "## DB Write success!! "
         except Exception,e:
             print "## DB write failed!!"
             print repr(e)
-            db.rollback()
+            conn.rollback()
             exit(5)
 
     else:

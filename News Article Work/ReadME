@@ -18,3 +18,26 @@ We need Location as well for our project. As no API is providing location of tha
 ----------------------------------------------------------------------------------------------------------------
 
 A new database is created for this project using command 'CREATE DATABASE "news_articles";' in psql.
+
+--------------------------------------------------------------------------------------------------------------------
+
+Following files are from AlchmyAPI in this folder:
+
+__init__.py
+alchemyapi.py
+exa,ple.py
+LICENSE
+pigeon.jpeg
+README
+tests.py
+
+---------------------------------------------------------------------------------------------------------------------
+
+Following files are from diffbot API in this folder:
+
+client.py
+config.py
+
+---------------------------------------------------------------------------------------------------------------------
+
+You need to change heading of few csv columns as per sil.py file give in main.

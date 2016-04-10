@@ -1,5 +1,5 @@
 CREATE TYPE senti_enum AS ENUM ('positive','negative','neutral');
-CREATE TYPE option_enum AS ENUM('yes','no');
+CREATE TYPE option_enum AS ENUM('Yes','No');
 CREATE TYPE confi_enum AS ENUM('yes','no','NA');
 
 CREATE TABLE ArticleMetaData(
