@@ -1,16 +1,20 @@
+CREATE TYPE senti_enum AS ENUM ('positive','negative','neutral');
+CREATE TYPE option_enum AS ENUM('yes','no');
+CREATE TYPE confi_enum AS ENUM('yes','no','NA');
+
 CREATE TABLE ArticleMetaData(
 article_hash_url VARCHAR(100) NOT NULL,
 title TEXT,
 publish_date DATE,
-onlytext LONGTEXT,
+onlytext TEXT,
 source_id INT,
 source_url VARCHAR(200),
 exact_url VARCHAR(200),
-opinion_section ENUM('yes','no'),
+opinion_section option_enum,
 search_text_hash VARCHAR(100),
 word_count INT,
 analysis_date DATE,
-document_sentiment ENUM('positive','negative','neutral'),
+document_sentiment senti_enum,
 pos_on_page INT,
 page_number INT,
 score FLOAT,
@@ -25,27 +29,27 @@ PRIMARY KEY (article_hash_url)
 CREATE TABLE ArticleAuthor(
 article_id VARCHAR(100),
 author TEXT,
-id INT NOT NULL AUTO_INCREMENT,
+id SERIAL,
 PRIMARY KEY(id),
 FOREIGN KEY (article_id) REFERENCES ArticleMetaData(article_hash_url)
 );
 
 CREATE TABLE AlchemyTaxonomy(
 article_id VARCHAR(100),
-id INT NOT NULL  AUTO_INCREMENT,
+id SERIAL,
 taxonomy_label TEXT,
 score FLOAT,
-confident ENUM('yes','no','NA'),
+confident confi_enum,
 PRIMARY KEY(id),
 FOREIGN KEY (article_id) REFERENCES ArticleMetaData(article_hash_url)
 );
 
 CREATE TABLE AlchemyEntity(
 article_id VARCHAR(100),
-id INT NOT NULL AUTO_INCREMENT,
+id SERIAL,
 entity TEXT,
 relevance FLOAT,
-sentiment ENUM('positive','negative','neutral'),
+sentiment senti_enum,
 type TEXT,
 dbpedia VARCHAR(200),
 PRIMARY KEY(id),
@@ -54,16 +58,16 @@ FOREIGN KEY (article_id) REFERENCES ArticleMetaData(article_hash_url)
 
 CREATE TABLE AlchemyKeyword(
 article_id VARCHAR(100),
-id INT NOT NULL AUTO_INCREMENT,
+id SERIAL,
 keyword TEXT,
 relevance FLOAT,
-sentiment ENUM('positive','negative','neutral'),
+sentiment senti_enum,
 PRIMARY KEY(id),
 FOREIGN KEY (article_id) REFERENCES ArticleMetaData(article_hash_url)
 );
 
 CREATE TABLE NewsSource(
-id INT NOT NULL AUTO_INCREMENT,
+id SERIAL,
 name TEXT,
 url VARCHAR(200),
 PRIMARY KEY(id)

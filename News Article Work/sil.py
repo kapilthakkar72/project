@@ -1,7 +1,7 @@
 from alchemyapi import AlchemyAPI
 from client import DiffbotClient
 from config import API_TOKEN
-import MySQLdb
+import psycopg2
 import time
 import json
 import pandas as pd
@@ -18,11 +18,12 @@ alchemyapi = AlchemyAPI()
 ####Diffbot object
 diffbot = DiffbotClient()
 token = API_TOKEN
-api = "article"
+api = "Articles/article"
 
-####MySQLdb cursor
-db = MySQLdb.connect(host="localhost",user="root",passwd="yoyo",db="sil_new",charset="utf8")
-cursor = db.cursor()
+####PSQL cursor
+conn_string = "host='localhost' dbname='news_articles' user='postgres' password='password'" 
+conn = psycopg2.connect(conn_string) 
+cursor = conn.cursor()
 ####Article Globals
 meta_author = ''#to be used in set_author table
 meta_text = '' #to be used with alchemy
