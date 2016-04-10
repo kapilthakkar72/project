@@ -1,6 +1,6 @@
 #cat $( ls -1 *.csv | sort -n  ) > new.csv
 cp 1.csv output.csv
-for i in {2..18}
+for i in {2..17}
 do 
     echo -e "\n" > t1
     tail -n +2 $i.csv >> t1 
