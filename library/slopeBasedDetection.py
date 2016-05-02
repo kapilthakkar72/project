@@ -26,6 +26,7 @@ def slopeBasedDetection(series1,smoothed1,series2,smoothed2,next_val_to_consider
         series1 = smoothArray(series1)
     if(smoothed2 == False):
         series2 = smoothArray(series2)
+    
     n = len(series1)
     positive_slopes = []
     anomalous_pts = []
@@ -48,14 +49,16 @@ def slopeBasedDetection(series1,smoothed1,series2,smoothed2,next_val_to_consider
         temp = []
         for x in positive_slopes:
             temp.append(x[2])
-        (_,positive_threshold) = MADThreshold(temp)
+        if(len(temp)>0):
+            (_,positive_threshold) = MADThreshold(temp)
         # print "Positive Threshold Value:" + str(positive_threshold)
         
     if(default_threshold == True):
         temp = []
         for x in negative_slopes:
             temp.append(x[2])
-        (negative_threshold,_) = MADThreshold(temp)
+        if(len(temp)>0):
+            (negative_threshold,_) = MADThreshold(temp)
         # print "Negative Threshold Value:" + str(negative_threshold)
         
     for i in range(0,len(positive_slopes)):
