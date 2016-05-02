@@ -41,3 +41,20 @@ config.py
 ---------------------------------------------------------------------------------------------------------------------
 
 You need to change heading of few csv columns as per sil.py file give in main.
+
+---------------------------------------------------------------------------------------------------------------------
+
+SOME HELPFUL COMMANDS:
+
+delete from NewsSource;
+delete from AlchemyKeyword;
+delete from AlchemyEntity;
+delete from AlchemyTaxonomy;
+delete from ArticleAuthor;
+delete from ArticleMetaData;
+
+ALTER SEQUENCE  alchemyentity_id_seq RESTART WITH 1;
+ALTER SEQUENCE  alchemykeyword_id_seq RESTART WITH 1;
+ALTER SEQUENCE  alchemytaxonomy_id_seq RESTART WITH 1;
+ALTER SEQUENCE  articleauthor_id_seq RESTART WITH 1;
+ALTER SEQUENCE  newssource_id_seq RESTART WITH 1;

@@ -148,7 +148,7 @@ def set_entity_table(article_id,demo_text):
                 print "## Writing to DB----"
                 cursor.execute(query,(article_id,text,relevance,sentiment_type,\
                                 e_type,dbpedia))
-                db.commit()
+                conn.commit()
                 print "## DB Write success!! "
             except Exception,e:
                 print "## DB write failed!!"
@@ -192,7 +192,7 @@ def set_keyword_table(article_id,demo_text):
             try:
                 print "## Writing to DB----"
                 cursor.execute(query,(article_id,text,relevance,sentiment_type))
-                db.commit()
+                conn.commit()
                 print "## DB Write success!! "
             except Exception,e:
                 print "## DB write failed!!"
@@ -224,6 +224,8 @@ def set_taxonomy_table(article_id,demo_text):
                 print('confident:',confident)
 
             print('')
+            if(confident == ''):
+                confident = 'NA'
 
             sql_query = "insert into AlchemyTaxonomy( \
                     article_id , taxonomy_label, score, confident) values " 
@@ -233,7 +235,7 @@ def set_taxonomy_table(article_id,demo_text):
             try:
                 print "## Writing to DB----"
                 cursor.execute(query,(article_id,taxonomy_label, score,confident))
-                db.commit()
+                conn.commit()
                 print "## DB Write success!! "
             except Exception,e:
                 print "## DB write failed!!"
@@ -263,7 +265,7 @@ def set_author_table(article_id,author):
     try:
         print "## Writing to DB----"
         cursor.execute(query,(article_id,author))
-        db.commit()
+        conn.commit()
         print "## DB Write success!! "
     except Exception,e:
         print "## DB write failed!!"
@@ -293,9 +295,9 @@ if __name__ == "__main__":
             if meta_text == '':
                 print "No parsed content from diffbot! Moving to next record. Index: {}".format(r['index'])
                 exit(1)
-            #set_entity_table(article_hash_url,meta_text)
-            #set_keyword_table(article_hash_url,meta_text)
-            #set_taxonomy_table(article_hash_url,meta_text)
-            #set_author_table(article_hash_url,meta_author)
+            set_entity_table(article_hash_url,meta_text)
+            set_keyword_table(article_hash_url,meta_text)
+            set_taxonomy_table(article_hash_url,meta_text)
+            set_author_table(article_hash_url,meta_author)
 
 	db.close()
