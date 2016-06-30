@@ -1,4 +1,5 @@
 figure()
+% Location (Latitude, Longitude) of Centers
 X = [91.2867777	23.831457	;
 78.0080745	27.1766701	;
 72.5713621	23.022505	;
@@ -124,7 +125,7 @@ dt = delaunayTriangulation(X);
 
 [V,R] = voronoiDiagram(dt);
 
-
+% Location (Latitude, Longitude) of Mandis
 Y = [
 93.7714464	25.8654824	;
 84.6603307	25.5560443	;

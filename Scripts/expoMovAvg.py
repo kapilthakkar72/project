@@ -113,8 +113,30 @@ if __name__ == "__main__":
         centres.append(str(record[0]))
         
     # Currently this code will add data of only 4 centres
-    # Mumbai, Patna, A'bad , Bengaluru
+    # 44- Mumbai, 50- Patna, 3- A'bad , 7- Bengaluru
+    # 16- delhi, 27- Hydrabad, 69- Varanasi
     centres = [44,50,3,7]
+    
+    '''count= 1
+    
+    while (count<77):
+    	if(count in centres):
+    		count=count+1
+    		continue
+    	smoothPrices_Arrivals(count)
+        print count
+        count=count+1
+        
+    count= 113
+    while (count<123):
+    	if(count in centres):
+    		count=count+1
+    		continue
+    	smoothPrices_Arrivals(count)
+        print count
+        count=count+1
+    '''
+    
     for centre in centres:
         smoothPrices_Arrivals(centre)
         print centre

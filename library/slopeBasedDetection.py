@@ -3,14 +3,16 @@ from Utility import MADThreshold
 from Utility import smoothArray
 import numpy as np
 '''
-This function takes 6 arguments:
+This function takes 8 arguments:
 
-1. series1 : Array of elements (int, real vals)
-2. next_val_to_consider: Which Val to consider to calculate slope? Usually next Val, but for our data we take 7 days
-3. smoothed: Array is smoothed or not? (True/False) If not smoothing will be done
-4. default_threshold: whether to consider default threshold or not (True/False)
-5. threshold: This is threshold value to consider if not default one.
-6. what_to_consider :
+1. series1 : Array of elements (int, real_vals)
+2. smoothed1 : whether series1 is smoothed or not.
+3. series2 : Array of elements (int, real_vals)
+4. smoothed2 : whether series2 is smoothed or not.
+5. next_val_to_consider: Which Val to consider to calculate slope? Usually next Val, but for our data we take 7 days
+6. default_threshold: whether to consider default threshold or not (True/False)
+7. threshold: This is threshold value to consider if not default one.
+8. what_to_consider :
     1. Only positive slopes
     0. Both type of slopes
     -1. Only negative slopes
@@ -106,6 +108,36 @@ def anomalyDatesSlopeBaseddetetion(slopeBasedResult,any_series):
         result.append((start_date,end_date,slopeBasedResult[i][2]))
     return result
 
+'''
+
+This is MAIN Function of this method.
+
+This function takes 8 arguments:
+
+1. series1 : Array of elements (int, real_vals)
+2. smoothed1 : whether series1 is smoothed or not.
+3. series2 : Array of elements (int, real_vals)
+4. smoothed2 : whether series2 is smoothed or not.
+5. next_val_to_consider: Which Val to consider to calculate slope? Usually next Val, but for our data we take 7 days
+6. default_threshold: whether to consider default threshold or not (True/False)
+7. threshold: This is threshold value to consider if not default one.
+8. what_to_consider :
+    1. Only positive slopes
+    0. Both type of slopes
+    -1. Only negative slopes
+
+
+Returns array of tuples of the form (start_date,end_date,slope_value)
+
+
+'''
+def slopeBased(series1,smoothed1,series2,smoothed2,next_val_to_consider = 7, default_threshold = True, threshold = 0, what_to_consider = 1):
+    # Extract just values from the series
+    # First column is date and second is value
+    series1_vals = [ row[1] for row in series1]
+    series2_vals = [ row[1] for row in series2]
+    result_1 = slopeBasedDetection(series1_vals,smoothed1,series2_vals,smoothed2,next_val_to_consider = 7, default_threshold = True, threshold = 0, what_to_consider = 1)
+    return anomalyDatesSlopeBaseddetetion(result_1,series1)
 
 ##########################################################################
 ##########          TESTING CODE            ##############################
